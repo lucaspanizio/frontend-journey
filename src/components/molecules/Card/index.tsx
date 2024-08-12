@@ -13,7 +13,7 @@ interface ITitleProps extends ICardProps {
   color?: keyof typeof theme.colors;
 }
 
-const Title = ({ children, color, ...rest }: ITitleProps) => {
+const Title = ({ children, color = 'primary', ...rest }: ITitleProps) => {
   return (
     <S.ContainerTitle {...rest}>
       <S.Title color={color}>{children}</S.Title>

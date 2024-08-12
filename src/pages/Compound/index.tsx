@@ -17,7 +17,7 @@ export const Compound: React.FC = () => {
           </Flex>
         </Card.Title>
 
-        <Card.Subtitle>
+        <Card.Subtitle >
           Esse é um exemplo de componente de composição
         </Card.Subtitle>
 
