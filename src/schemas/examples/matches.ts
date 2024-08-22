@@ -3,7 +3,11 @@ import * as yup from 'yup';
 const schema = yup.object({
   phoneNumber: yup
     .string()
-    .matches(/^\(\d{2}\) \d{4}-\d{4}$/, 'Número de telefone inválido')
+    .matches(/^\(\d{2}\) \d{4}-\d{4}$/, {
+      name: 'phone-match',
+      message: 'Número de telefone inválido',
+      excludeEmptyString: false, // default
+    })
     .required('Número de telefone é obrigatório'),
 });
 
