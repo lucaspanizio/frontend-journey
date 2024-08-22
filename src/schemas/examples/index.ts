@@ -25,6 +25,7 @@ const runScript = async () => {
       name: 'filePath',
       message: 'Escolha o arquivo que deseja executar:',
       choices,
+      pageSize: choices.length,
     },
   ];
 
