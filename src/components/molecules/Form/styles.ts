@@ -48,8 +48,3 @@ export const Form = styled.form`
   gap: 1rem;
   font-size: 0.8rem;
 `;
-
-export const Input = styled.input`
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-`;
