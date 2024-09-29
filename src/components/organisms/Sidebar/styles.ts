@@ -12,11 +12,15 @@ export const Container = styled.aside<ContainerProps>`
   white-space: nowrap;
   min-width: 60px;
   font-size: 0.9rem;
-  width: ${({ collapsed }) => (collapsed ? '60px' : '230px')};
   transition: width 0.3s;
   height: auto;
-  background-color: #0f172a;
   overflow: hidden;
+  background-color: #0f172a;
+  width: ${({ collapsed }) => (collapsed ? '60px' : '230px')};
+
+  @media (max-width: 768px) {
+    width: 60px;
+  }
 `;
 
 export const HamburgerButton = styled.button`

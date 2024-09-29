@@ -1,21 +1,16 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { CircleCheckBigIcon, TriangleAlertIcon, MenuIcon } from 'lucide-react';
+import { CircleCheckBigIcon, MenuIcon } from 'lucide-react';
+import { ROUTES } from '../../../keys/routes';
 import { Flex } from '../../atoms/Flex';
 import * as S from './styles';
 
 const MENUS = [
   {
     id: 1,
-    path: '/compound',
-    title: 'Compound Example',
+    path: ROUTES.COMPOUND_PATTERN,
+    title: 'Compound Pattern',
     icon: <CircleCheckBigIcon />,
-  },
-  {
-    id: 2,
-    path: '/traditional',
-    title: 'Traditional Example',
-    icon: <TriangleAlertIcon />,
   },
 ];
 
@@ -33,7 +28,7 @@ export const Sidebar: React.FC = () => {
         <S.HamburgerButton onClick={toggleCollapse}>
           <MenuIcon />
         </S.HamburgerButton>
-        <S.Title>Front-end Journey</S.Title>
+        <S.Title>Frontend Journey</S.Title>
       </S.Header>
 
       <S.Divider />
