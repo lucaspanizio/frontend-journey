@@ -6,6 +6,7 @@ import { StateManagers } from '../pages/StateManagers';
 import { NotFound } from '../pages/NotFound';
 import { StateManagers } from '../pages/StateManagers';
 import { CompoundPattern } from '../pages/CompoundPattern';
+import { usePageTitle } from '../hooks/usePageTitle';
 import { ROUTES } from '../keys/routes';
 
 export const Routes: React.FC = () => {

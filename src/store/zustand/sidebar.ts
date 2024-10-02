@@ -9,13 +9,15 @@ interface SidebarStore {
   toggleSubmenu: (menuId: number) => void;
 }
 
+export const MENUS = [
+  { id: 1, path: '/compound-pattern', title: 'Compound Pattern' },
+  { id: 2, path: '/state-managers', title: 'Gerenciadores de Estado' },
+];
+
 const initialState = {
   collapsed: false,
   openMenuId: 0,
-  menus: [
-    { id: 1, path: '/compound-pattern', title: 'Compound Pattern' },
-    { id: 2, path: '/state-managers', title: 'Gerenciadores de Estado' },
-  ],
+  menus: MENUS,
 };
 
 export const useSidebar = create<SidebarStore>()((set) => ({
