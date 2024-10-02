@@ -17,7 +17,7 @@ export const Container = styled.aside<ContainerProps>`
   height: auto;
   overflow: hidden;
   background-color: #0f172a;
-  width: ${({ collapsed }) => (collapsed ? '60px' : '230px')};
+  width: ${({ collapsed }) => (collapsed ? '60px' : '280px')};
 
   @media (max-width: 768px) {
     width: 60px;
