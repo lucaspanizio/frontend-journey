@@ -24,7 +24,8 @@
     "styled-components": "^6.1.12",
     "styled-system": "^5.1.5",
     "tsx": "^4.17.0",
-    "yup": "^1.4.0"
+    "yup": "^1.4.0",
+    "zustand": "^5.0.0-rc.2"
   },
   "devDependencies": {
     "@types/inquirer": "^9.0.7",
