@@ -6,18 +6,25 @@ interface SidebarStore {
   collapsed: boolean;
   openMenuId: number;
   toggle: () => void;
-  toggleSubmenu: (menuId: number) => void;
+  toggleSubmenu: (submenuId: number) => void;
 }
-
-export const MENUS = [
-  { id: 1, path: '/compound-pattern', title: 'Compound Pattern' },
-  { id: 2, path: '/state-managers', title: 'Gerenciadores de Estado' },
-];
 
 const initialState = {
   collapsed: false,
   openMenuId: 0,
-  menus: MENUS,
+  menus: [
+    { id: 1, path: '/compound', title: 'Compound Example' },
+    { id: 2, path: '/traditional', title: 'Traditional Example' },
+    {
+      id: 3,
+      title: 'Gerenciadores de Estado',
+      submenus: [
+        { id: 3.1, path: '/context-api', title: 'Context API' },
+        { id: 3.2, path: '/redux-toolkit', title: 'Redux Toolkit' },
+        { id: 3.3, path: '/zustand', title: 'Zustand' },
+      ],
+    },
+  ],
 };
 
 export const useSidebar = create<SidebarStore>()((set) => ({
