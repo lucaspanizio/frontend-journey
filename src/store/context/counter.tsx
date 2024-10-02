@@ -30,7 +30,7 @@ export const CounterProvider: React.FC<ICounterProvider> = ({ children }) => {
 };
 
 // eslint-disable-next-line react-refresh/only-export-components
-export const useCounter = () => {
+export const useContextAPICounter = () => {
   const context = useContext(CounterContext);
 
   if (!context) {
