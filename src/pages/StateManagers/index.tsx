@@ -1,12 +1,10 @@
-import { useContextAPICounter } from '../../store/context/counter';
-import { useZustandCounter } from '../../store/zustand/counter';
+import { Box } from '../../components/atoms/Box';
+import { useCounter } from '../../store/context/counter';
 import { Counter } from '../../components/molecules/Counter';
 import { Flex } from '../../components/atoms/Flex';
-import { Box } from '../../components/atoms/Box';
 
 export const StateManagers = () => {
-  const context = useContextAPICounter();
-  const zustand = useZustandCounter();
+  const context = useCounter();
 
   return (
     <Box>
@@ -23,7 +21,7 @@ export const StateManagers = () => {
 
         <Flex flexDirection="column" alignItems="center">
           <strong>Zustand</strong>
-          <Counter {...zustand} />
+          <Counter {...context} />
         </Flex>
       </Flex>
     </Box>
