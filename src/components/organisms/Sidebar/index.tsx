@@ -12,7 +12,7 @@ export const Sidebar = () => {
         <S.HamburgerButton onClick={toggle}>
           <MenuIcon />
         </S.HamburgerButton>
-        <S.Title>Front-end Journey</S.Title>
+        <S.Title>Frontend Journey</S.Title>
       </S.Header>
 
       <S.Divider />

@@ -7,17 +7,13 @@ import * as S from './styles';
 export const NotFound: React.FC = () => {
   const navigate = useNavigate();
 
-  const handleGoBack = () => {
-    navigate('/');
-  };
-
   return (
     <S.Container>
       <S.ErrorCode>404</S.ErrorCode>
       <S.ErrorMessage>Página Não Encontrada</S.ErrorMessage>
       <p>Desculpe, a página que você está procurando não existe.</p>
-      <S.Button onClick={handleGoBack}>
-        <Flex>
+      <S.Button onClick={() => navigate(-1)}>
+        <Flex alignItems="center">
           <UndoIcon color="white" />
           Voltar
         </Flex>

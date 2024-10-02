@@ -64,7 +64,6 @@ const ResetCSS = css`
   object {
     display: block;
     max-width: 100%;
-    /* vertical-align: middle; */
   }
 
   img,
@@ -104,7 +103,19 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     color: #fafafa;
-    background-color: #030712;
+    background-color: ${({ theme }) => theme.colors.background.dark};
     font-family: Poppins, Helvetica, Sans-Serif;
+  }
+
+  p + p {
+    margin-top: 0.75rem;
+  }
+
+  strong {
+    color: ${({ theme }) => theme.colors.text.light};
+  }
+
+  code {
+    letter-spacing: 0.04em;
   }
 `;

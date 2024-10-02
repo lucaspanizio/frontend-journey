@@ -1,13 +1,13 @@
-import { HTMLAttributes, PropsWithChildren, ReactNode } from 'react';
-import { theme } from '../../../global/theme';
+import { PropsWithChildren, ReactNode } from 'react';
+import { Color } from '../../../types/color';
 import { Flex } from '../../atoms/Flex';
 import * as S from './styles';
 
-interface ICardProps extends HTMLAttributes<HTMLDivElement>, S.CardProps {
+interface ICardProps extends S.CardProps {
   icon?: ReactNode;
   title?: string;
   subtitle?: string;
-  color?: keyof typeof theme.colors;
+  color?: Color;
 }
 
 export const CommCard = ({
@@ -20,7 +20,7 @@ export const CommCard = ({
 }: PropsWithChildren<ICardProps>) => {
   return (
     <S.Container {...rest}>
-      <Flex>
+      <Flex alignItems="center">
         {icon}
         {title && <S.Title color={color}>{title}</S.Title>}
       </Flex>

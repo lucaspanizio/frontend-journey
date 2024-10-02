@@ -1,19 +1,20 @@
-import { HTMLAttributes, ReactNode } from 'react';
-import { theme } from '../../../global/theme';
+import { PropsWithChildren } from 'react';
+import { Color } from '../../../types/color';
 import * as S from './styles';
 
-interface ICardProps extends HTMLAttributes<HTMLDivElement>, S.CardProps {}
+interface ICardProps extends S.CardProps {}
 
-const Card = ({ children, ...rest }: ICardProps) => {
+const Card = ({ children, ...rest }: PropsWithChildren<ICardProps>) => {
   return <S.Container {...rest}>{children}</S.Container>;
 };
 
-interface ITitleProps extends ICardProps {
-  children: ReactNode;
-  color?: keyof typeof theme.colors;
-}
+interface ITitleProps extends S.TitleProps {}
 
-const Title = ({ children, color = 'primary', ...rest }: ITitleProps) => {
+const Title = ({
+  children,
+  color = 'primary',
+  ...rest
+}: PropsWithChildren<ITitleProps>) => {
   return (
     <S.ContainerTitle {...rest}>
       <S.Title color={color}>{children}</S.Title>
@@ -22,11 +23,14 @@ const Title = ({ children, color = 'primary', ...rest }: ITitleProps) => {
 };
 
 interface ISubtitleProps extends ICardProps {
-  children: ReactNode;
-  color?: keyof typeof theme.colors;
+  color?: Color;
 }
 
-const Subtitle = ({ children, color, ...rest }: ISubtitleProps) => {
+const Subtitle = ({
+  children,
+  color,
+  ...rest
+}: PropsWithChildren<ISubtitleProps>) => {
   return (
     <S.ContainerTitle {...rest}>
       <S.SubTitle color={color}>{children}</S.SubTitle>

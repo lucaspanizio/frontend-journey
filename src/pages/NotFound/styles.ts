@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
@@ -7,9 +7,12 @@ export const Container = styled.div`
   justify-content: center;
   height: 100vh;
   text-align: center;
-  background-color: #f8f9fa;
-  color: #343a40;
   padding: 1rem;
+
+  ${({ theme: { colors } }) => css`
+    background-color: ${colors.background.dark};
+    color: ${colors.text.light};
+  `};
 `;
 
 export const ErrorCode = styled.h1`
