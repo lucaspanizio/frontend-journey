@@ -12,6 +12,7 @@ export const Container = styled.aside<ContainerProps>`
   white-space: nowrap;
   min-width: 60px;
   font-size: 0.9rem;
+  width: ${({ collapsed }) => (collapsed ? '60px' : '280px')};
   transition: width 0.3s;
   height: auto;
   overflow: hidden;
@@ -36,48 +37,6 @@ export const HamburgerButton = styled.button`
 
   &:focus {
     outline: none;
-  }
-`;
-
-export const MenuList = styled.ul`
-  display: flex;
-  flex-direction: column;
-`;
-
-type MenuItemProps = {
-  isActive?: boolean;
-  collapsed?: boolean;
-};
-
-export const MenuItem = styled.li<MenuItemProps>`
-  position: relative;
-  padding: 1rem;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  color: #d4d4d8;
-
-  ${({ isActive }) =>
-    isActive &&
-    css`
-      &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 4px;
-        background-color: #84cc16;
-      }
-    `}
-
-  &:hover {
-    cursor: pointer;
-    color: #fff;
-  }
-
-  svg {
-    min-width: 30px;
   }
 `;
 
