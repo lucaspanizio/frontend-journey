@@ -1,4 +1,3 @@
-import React from 'react';
 import { CircleCheckBigIcon, TriangleAlertIcon } from 'lucide-react';
 import { CommCard } from '../../components/molecules/CommCard';
 import { Card } from '../../components/molecules/Card';
@@ -7,7 +6,7 @@ import { Form } from '../../components/molecules/Form';
 import { Box } from '../../components/atoms/Box';
 import { Typography } from '../../components/atoms/Typograph';
 
-export const CompoundPattern: React.FC = () => {
+export const CompoundPattern = () => {
   return (
     <Box gap={30}>
       <Flex gap={50} flexWrap="wrap">

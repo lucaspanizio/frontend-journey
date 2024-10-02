@@ -4,10 +4,11 @@ import { Layout } from '../components/templates/Layout';
 import { NotFound } from '../pages/NotFound';
 import { StateManagers } from '../pages/StateManagers';
 import { CompoundPattern } from '../pages/CompoundPattern';
-import { NotFound } from '../pages/NotFound';
-import { ROUTES } from '../keys/routes';
+import { usePageTitle } from '../hooks/usePageTitle';
 
 export const Routes: React.FC = () => {
+  usePageTitle();
+
   return (
     <Router>
       <Route path="/" element={<Layout />}>
