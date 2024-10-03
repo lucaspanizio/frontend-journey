@@ -19,15 +19,15 @@ export const Counter = ({
     <S.Wrapper>
       <S.Display value={count} />
       <Flex>
-        <S.DecButton onClick={decrement}>
+        <S.Button variant="dec" onClick={decrement}>
           <MinusIcon />
-        </S.DecButton>
-        <S.ResetButton onClick={reset}>
+        </S.Button>
+        <S.Button variant="reset" onClick={reset}>
           <UndoIcon />
-        </S.ResetButton>
-        <S.IncButton onClick={increment}>
+        </S.Button>
+        <S.Button variant="inc" onClick={increment}>
           <PlusIcon />
-        </S.IncButton>
+        </S.Button>
       </Flex>
     </S.Wrapper>
   );
