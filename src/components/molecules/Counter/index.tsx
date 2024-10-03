@@ -2,12 +2,14 @@ import { MinusIcon, PlusIcon, UndoIcon } from 'lucide-react';
 import { Flex } from '../../atoms/Flex';
 import * as S from './styles';
 
-interface ICounterProps {
+export type Counter = {
   count: number;
   increment: () => void;
   decrement: () => void;
   reset: () => void;
-}
+};
+
+interface ICounterProps extends Counter {}
 
 export const Counter = ({
   count,
