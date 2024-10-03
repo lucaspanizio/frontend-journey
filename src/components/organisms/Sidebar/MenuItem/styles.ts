@@ -48,7 +48,6 @@ export const SubMenuContainer = styled.div<SubMenuProps>`
   overflow: hidden;
   max-height: ${({ isOpen }) => (isOpen ? '500px' : '0')};
   transition: ${({ isOpen }) => (isOpen ? 'max-height 0.5s ease-out' : 'none')};
-  /* transition: max-height 0.5s ease-out; */
 `;
 
 export const SubMenu = styled.div`
@@ -61,8 +60,10 @@ export const SubMenu = styled.div`
 
 export const MenuID = styled.span`
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 1.25rem;
-  text-align: center;
   width: 2rem;
   aspect-ratio: 1/1;
   border-radius: 50%;
