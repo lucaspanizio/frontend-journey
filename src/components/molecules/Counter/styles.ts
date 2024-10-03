@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -18,24 +18,33 @@ export const Display = styled.input`
   width: 100%;
 `;
 
-const BaseButton = styled.button`
+interface IButtonProps {
+  variant: 'inc' | 'dec' | 'reset';
+}
+
+export const Button = styled.button<IButtonProps>`
   display: flex;
   justify-content: center;
   border-radius: 15px;
   padding: 0.5rem;
   color: white;
   cursor: pointer;
-`;
 
-export const IncButton = styled(BaseButton)`
-  background-color: #4caf50;
-`;
-
-export const DecButton = styled(BaseButton)`
-  background-color: #f44336;
-`;
-
-export const ResetButton = styled(BaseButton)`
-  background-color: #dedede;
-  color: black;
+  ${({ variant }) => {
+    switch (variant) {
+      case 'inc':
+        return css`
+          background-color: #4caf50;
+        `;
+      case 'dec':
+        return css`
+          background-color: #f44336;
+        `;
+      case 'reset':
+        return css`
+          color: black;
+          background-color: #dedede;
+        `;
+    }
+  }}
 `;
