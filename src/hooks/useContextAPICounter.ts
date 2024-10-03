@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { CounterContext, ICounterContext } from '../store/context/counter';
+import { CounterContext, ICounterContext } from '@/store/context/counter';
 
 export const useContextAPICounter = (): ICounterContext => {
   const context = useContext(CounterContext);

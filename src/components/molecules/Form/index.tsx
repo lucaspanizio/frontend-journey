@@ -1,9 +1,9 @@
-import { Flex } from '../../atoms/Flex';
-import * as S from './styles';
 import * as yup from 'yup';
-import { yupResolver } from '@hookform/resolvers/yup';
 import { FormProvider, useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { Flex } from '@/components/atoms/Flex';
 import { Input } from '../Input';
+import * as S from './styles';
 
 const schema = yup.object({
   username: yup.string().required('Usuário é obrigatório!'),

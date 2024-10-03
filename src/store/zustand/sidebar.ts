@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { MenuItem } from '../../components/organisms/Sidebar/MenuItem';
+import { MenuItem } from '@/components/organisms/Sidebar/MenuItem';
 
 interface SidebarStore {
   menus: MenuItem[];

@@ -1,10 +1,10 @@
 import { CircleCheckBigIcon, TriangleAlertIcon } from 'lucide-react';
-import { CommCard } from '../../components/molecules/CommCard';
-import { Card } from '../../components/molecules/Card';
-import { Flex } from '../../components/atoms/Flex';
-import { Form } from '../../components/molecules/Form';
-import { Box } from '../../components/atoms/Box';
-import { Typography } from '../../components/atoms/Typograph';
+import { CommCard } from '@/components/molecules/CommCard';
+import { Card } from '@/components/molecules/Card';
+import { Flex } from '@/components/atoms/Flex';
+import { Form } from '@/components/molecules/Form';
+import { Box } from '@/components/atoms/Box';
+import { Typography } from '@/components/atoms/Typograph';
 
 export const CompoundPattern = () => {
   return (

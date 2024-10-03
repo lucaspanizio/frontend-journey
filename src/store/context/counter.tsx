@@ -1,7 +1,11 @@
 import React, { createContext, useState, ReactNode } from 'react';
-import { Counter } from '../../components/molecules/Counter';
+import { Counter } from '@/components/molecules/Counter';
 
-export const CounterContext = createContext<Counter>({} as Counter);
+export interface ICounterContext extends Counter {}
+
+export const CounterContext = createContext<ICounterContext>(
+  {} as ICounterContext,
+);
 
 interface ICounterProvider {
   children: ReactNode;

@@ -1,5 +1,5 @@
 import { MenuIcon } from 'lucide-react';
-import { useSidebar } from '../../../store/zustand/sidebar';
+import { useSidebar } from '@/store/zustand/sidebar';
 import { MenuList } from './MenuList';
 import * as S from './styles';
 

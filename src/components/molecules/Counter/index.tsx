@@ -1,5 +1,5 @@
 import { MinusIcon, PlusIcon, UndoIcon } from 'lucide-react';
-import { Flex } from '../../atoms/Flex';
+import { Flex } from '@/components/atoms/Flex';
 import * as S from './styles';
 
 export type Counter = {

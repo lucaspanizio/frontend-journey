@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UndoIcon } from 'lucide-react';
-import { Flex } from '../../components/atoms/Flex';
+import { Flex } from '@/components/atoms/Flex';
 import * as S from './styles';
 
 export const NotFound: React.FC = () => {
