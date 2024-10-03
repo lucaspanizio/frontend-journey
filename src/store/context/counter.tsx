@@ -1,15 +1,7 @@
-import React, { createContext, useState, ReactNode, useContext } from 'react';
+import React, { createContext, useState, ReactNode } from 'react';
+import { Counter } from '../../components/molecules/Counter';
 
-interface ICounterContext {
-  count: number;
-  increment: () => void;
-  decrement: () => void;
-  reset: () => void;
-}
-
-export const CounterContext = createContext<ICounterContext>(
-  {} as ICounterContext,
-);
+export const CounterContext = createContext<Counter>({} as Counter);
 
 interface ICounterProvider {
   children: ReactNode;
@@ -27,15 +19,4 @@ export const CounterProvider: React.FC<ICounterProvider> = ({ children }) => {
       {children}
     </CounterContext.Provider>
   );
-};
-
-// eslint-disable-next-line react-refresh/only-export-components
-export const useContextAPICounter = () => {
-  const context = useContext(CounterContext);
-
-  if (!context) {
-    throw new Error('useCounter deve ser utilizado dentro de CounterProvider');
-  }
-
-  return context;
 };
