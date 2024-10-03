@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { Counter } from '../../components/molecules/Counter';
+import { Counter } from '@/components/molecules/Counter';
 
 const initialState = {
   count: 0,

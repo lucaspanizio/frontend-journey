@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { MENUS } from '../store/zustand/sidebar';
+import { MENUS } from '@/store/zustand/sidebar';
 
 export const usePageTitle = () => {
   const { pathname } = useLocation();

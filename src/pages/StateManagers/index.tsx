@@ -1,9 +1,9 @@
-import { useContextAPICounter } from '../../store/context/counter';
-import { useZustandCounter } from '../../store/zustand/counter';
-import { Counter } from '../../components/molecules/Counter';
-import { Flex } from '../../components/atoms/Flex';
-import { Box } from '../../components/atoms/Box';
-import { useReduxCounter } from '../../hooks/useReduxCounter';
+import { useContextAPICounter } from '@/hooks/useContextAPICounter';
+import { useZustandCounter } from '@/store/zustand/counter';
+import { useReduxCounter } from '@/hooks/useReduxCounter';
+import { Counter } from '@/components/molecules/Counter';
+import { Flex } from '@/components/atoms/Flex';
+import { Box } from '@/components/atoms/Box';
 
 export const StateManagers = () => {
   const context = useContextAPICounter();

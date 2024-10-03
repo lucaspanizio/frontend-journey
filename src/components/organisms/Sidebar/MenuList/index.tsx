@@ -1,4 +1,4 @@
-import { useSidebar } from '../../../../store/zustand/sidebar';
+import { useSidebar } from '@/store/zustand/sidebar';
 import { MenuItem } from '../MenuItem';
 import * as S from './styles';
 
