@@ -17,7 +17,7 @@ export const Routes: React.FC = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<CompoundPattern />} />
         <Route path={ROUTES.COMPOUND_PATTERN} element={<CompoundPattern />} />
-        <Route path="/state-managers" element={<StateManagers />} />
+        <Route path={ROUTES.STATE_MANAGERS} element={<StateManagers />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Router>
