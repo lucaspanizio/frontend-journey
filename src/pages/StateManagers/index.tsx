@@ -3,10 +3,12 @@ import { useZustandCounter } from '../../store/zustand/counter';
 import { Counter } from '../../components/molecules/Counter';
 import { Flex } from '../../components/atoms/Flex';
 import { Box } from '../../components/atoms/Box';
+import { useReduxCounter } from '../../hooks/useReduxCounter';
 
 export const StateManagers = () => {
   const context = useContextAPICounter();
   const zustand = useZustandCounter();
+  const redux = useReduxCounter();
 
   return (
     <Box>
@@ -18,7 +20,7 @@ export const StateManagers = () => {
 
         <Flex flexDirection="column" alignItems="center">
           <strong>Redux Toolkit</strong>
-          <Counter {...context} />
+          <Counter {...redux} />
         </Flex>
 
         <Flex flexDirection="column" alignItems="center">
