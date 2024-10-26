@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { MenuItem } from '@/components/organisms/Sidebar/MenuItem';
+import { ROUTES } from '@/keys/routes';
 
 interface SidebarStore {
   menus: MenuItem[];
@@ -10,8 +11,9 @@ interface SidebarStore {
 }
 
 export const MENUS = [
-  { id: 1, path: '/compound-pattern', title: 'Compound Pattern' },
-  { id: 2, path: '/state-managers', title: 'Gerenciadores de Estado' },
+  { id: 1, path: ROUTES.COMPOUND_PATTERN, title: 'Compound Pattern' },
+  { id: 2, path: ROUTES.STATE_MANAGERS, title: 'Gerenciadores de Estado' },
+  { id: 3, path: ROUTES.ERROR_BOUNDARY, title: 'Error Boundary' },
 ];
 
 const initialState = {
