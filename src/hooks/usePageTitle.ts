@@ -4,9 +4,10 @@ import { MENUS } from '@/store/zustand/sidebar';
 
 export const usePageTitle = () => {
   const { pathname } = useLocation();
-  const title = `Frontend Journey | ${
-    MENUS.find((menu) => menu.path === pathname)?.title
-  }`;
+
+  const appName = 'Frontend Journey';
+  const foundMenu = MENUS.find((menu) => menu.path === pathname);
+  const title = foundMenu ? `${appName} | ${foundMenu.title}` : appName;
 
   MENUS;
   useEffect(() => {

@@ -10,7 +10,6 @@ export const Sidebar = () => {
     <S.Container collapsed={collapsed}>
       <S.Header>
         <S.HamburgerButton onClick={toggle}>
-        <S.HamburgerButton onClick={toggle}>
           <MenuIcon />
         </S.HamburgerButton>
         <S.Title>Frontend Journey</S.Title>
@@ -18,7 +17,6 @@ export const Sidebar = () => {
 
       <S.Divider />
 
-      <MenuList />
       <MenuList />
 
       <S.Footer collapsed={collapsed}>Developed by Panizio</S.Footer>
