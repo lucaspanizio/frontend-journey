@@ -40,8 +40,6 @@ export const useSidebar = create<SidebarStore>()((set) => ({
       const menuIsAlreadyOpen = menuId === state.openMenuId;
       return {
         ...state,
-        collapsed:
-          !menuIsAlreadyOpen && state.collapsed ? false : state.collapsed,
         openMenuId: menuIsAlreadyOpen ? 0 : menuId,
       };
     });

@@ -74,3 +74,24 @@ export const MenuTitle = styled.span`
   padding-left: 3rem;
   overflow-x: hidden;
 `;
+
+type TooltipProps = {
+  isVisible: boolean;
+};
+
+export const Tooltip = styled.div<TooltipProps>`
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 12px;
+  z-index: 1000;
+  visibility: ${({ isVisible }) => (isVisible ? 'visible' : 'hidden')};
+  opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
+  transition: opacity 0.2s ease-in-out;
+
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+`;

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { ZapIcon } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useSidebar } from '@/store/zustand/sidebar';
@@ -16,19 +17,22 @@ interface IMenuItemProps {
 }
 
 export const MenuItem = ({
-  data: { id, path, title, submenus },
+  data: { id, path = '', title, submenus = [] },
 }: IMenuItemProps) => {
-  const { openMenuId, toggleSubmenu } = useSidebar();
-
   const { pathname } = useLocation();
-  const isOpen = openMenuId === id;
-  const hasSubmenus = submenus && submenus.length > 0;
+  const [isTooltipVisible, setTooltipVisible] = useState(false);
+  const { openMenuId, toggleSubmenu, collapsed } = useSidebar();
 
+  const isOpen = openMenuId === id;
+  const hasSubmenus = submenus.length > 0;
   const isActive =
     id === 1
-      ? [path, '', '/'].includes(pathname)
-      : pathname === path ||
-        Boolean(submenus?.some((sub) => sub.path === pathname));
+      ? ['', '/', path].includes(pathname)
+      : pathname === path || submenus.some((sub) => sub.path === pathname);
+
+  const handleMouseEnter = () => setTooltipVisible(true);
+  const handleMouseLeave = () => setTooltipVisible(false);
+  const handleClick = () => toggleSubmenu(id);
 
   const content = (
     <Flex gap={0} alignItems="center">
@@ -38,19 +42,27 @@ export const MenuItem = ({
   );
 
   return (
-    <S.MenuItem isActive={isActive} onClick={() => toggleSubmenu(id)}>
-      {path && path !== '' ? <Link to={path}>{content}</Link> : content}
+    <S.MenuItem
+      isActive={isActive}
+      onClick={handleClick}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {path ? <Link to={path}>{content}</Link> : content}
 
+      <S.Tooltip isVisible={collapsed && isTooltipVisible}>{title}</S.Tooltip>
       {hasSubmenus && (
         <S.SubMenuContainer isOpen={isOpen}>
-          {submenus.map((submenu) => (
-            <Link to={submenu.path ?? ''} key={submenu.id}>
-              <S.SubMenu>
-                <ZapIcon />
-                {submenu.title}
-              </S.SubMenu>
-            </Link>
-          ))}
+          {submenus.map(
+            ({ id: subId, path: subPath = '', title: subTitle }) => (
+              <Link to={subPath} key={subId}>
+                <S.SubMenu>
+                  <ZapIcon />
+                  {subTitle}
+                </S.SubMenu>
+              </Link>
+            ),
+          )}
         </S.SubMenuContainer>
       )}
     </S.MenuItem>

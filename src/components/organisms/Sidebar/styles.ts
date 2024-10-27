@@ -15,7 +15,7 @@ export const Container = styled.aside<ContainerProps>`
   width: ${({ collapsed }) => (collapsed ? '60px' : '280px')};
   transition: width 0.3s;
   height: auto;
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: #0f172a;
   width: ${({ collapsed }) => (collapsed ? '60px' : '280px')};
 
@@ -50,6 +50,7 @@ export const Header = styled.div`
 `;
 
 export const Title = styled.span`
+  font-size: 1.1rem;
   padding-left: 1rem;
   overflow-x: hidden;
 `;

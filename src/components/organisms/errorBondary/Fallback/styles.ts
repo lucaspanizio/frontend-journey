@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  text-align: center;
+  width: 100%;
   padding: 2rem;
+  text-align: center;
 `;
 
 export const Title = styled.h1`
