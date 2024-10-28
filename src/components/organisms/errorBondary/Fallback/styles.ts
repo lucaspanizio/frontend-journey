@@ -2,8 +2,11 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 100%;
+  height: 100%;
   padding: 2rem;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 `;
 
 export const Title = styled.h1`
@@ -34,5 +37,43 @@ export const RetryButton = styled.button`
 
   &:hover {
     background-color: #0056b3;
+  }
+`;
+
+export const ToastWrapper = styled.div`
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 0;
+  bottom: 0;
+  margin: 1rem;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  user-select: none;
+  color: #fafafa;
+  background-color: #ef4444;
+  border-radius: 50%;
+  white-space: nowrap;
+  overflow: hidden;
+
+  transition: width 0.3s ease, background-color 0.3s ease,
+    border-radius 0.1s ease;
+
+  &::after {
+    font-size: 1.25rem;
+    content: '!';
+  }
+
+  &:hover {
+    width: 110px;
+    border-radius: 20px;
+    background-color: #c83535;
+
+    &::after {
+      font-size: 1rem;
+      content: 'Show more';
+    }
   }
 `;

@@ -13,21 +13,23 @@ export const Routes: React.FC = () => {
   usePageTitle();
 
   return (
-    <Router>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<CompoundPattern />} />
-        <Route path={ROUTES.COMPOUND_PATTERN} element={<CompoundPattern />} />
-        <Route path={ROUTES.STATE_MANAGERS} element={<StateManagers />} />
-        <Route
-          path={ROUTES.ERROR_BOUNDARY}
-          element={
-            <ErrorBoundary>
-              <Error />
-            </ErrorBoundary>
-          }
-        />
-      </Route>
-      <Route path="*" element={<NotFound />} />
-    </Router>
+    <ErrorBoundary>
+      <Router>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<CompoundPattern />} />
+          <Route path={ROUTES.COMPOUND_PATTERN} element={<CompoundPattern />} />
+          <Route path={ROUTES.STATE_MANAGERS} element={<StateManagers />} />
+          <Route
+            path={ROUTES.ERROR_BOUNDARY}
+            element={
+              <ErrorBoundary>
+                <Error />
+              </ErrorBoundary>
+            }
+          />
+        </Route>
+        <Route path="*" element={<NotFound />} />
+      </Router>
+    </ErrorBoundary>
   );
 };

@@ -107,6 +107,11 @@ export const GlobalStyle = createGlobalStyle`
     font-family: Poppins, Helvetica, Sans-Serif;
   }
 
+  #root {
+    width: 100vw;
+    height: 100vh;
+  }
+
   p + p {
     margin-top: 0.75rem;
   }

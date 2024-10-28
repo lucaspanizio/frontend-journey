@@ -1,10 +1,18 @@
+import { useState } from 'react';
+import { ModalError } from './Modal';
 import * as S from './styles';
 
 interface FallbackProps {
+  error?: Error;
   onRetry?: () => void;
 }
 
-export const FallbackError = ({ onRetry }: FallbackProps) => {
+export const FallbackError = ({ error, onRetry }: FallbackProps) => {
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
+  const openModal = () => setIsOpenModal(true);
+  const closeModal = () => setIsOpenModal(false);
+
   return (
     <S.Wrapper>
       <S.Title>Ops! Algo deu errado.</S.Title>
@@ -13,6 +21,14 @@ export const FallbackError = ({ onRetry }: FallbackProps) => {
       <S.RetryButton onClick={onRetry || (() => window.location.reload())}>
         Tentar novamente
       </S.RetryButton>
+
+      {error && (
+        <>
+          <S.ToastWrapper onClick={openModal} />
+
+          {isOpenModal && <ModalError error={error} closeModal={closeModal} />}
+        </>
+      )}
     </S.Wrapper>
   );
 };
