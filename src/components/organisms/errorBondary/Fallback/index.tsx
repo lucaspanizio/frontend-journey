@@ -24,7 +24,9 @@ export const FallbackError = ({ error, onRetry }: FallbackProps) => {
 
       {error && (
         <>
-          <S.ToastWrapper onClick={openModal} />
+          {import.meta.env.MODE === 'development' && (
+            <S.ToastButton onClick={openModal} />
+          )}
 
           {isOpenModal && <ModalError error={error} closeModal={closeModal} />}
         </>
