@@ -9,7 +9,7 @@ export const Typography = ({
   children,
 }: PropsWithChildren<ITypographyProps>) => {
   return (
-    <S.Typography as={variant} color={color}>
+    <S.Typography as={variant} color={color} variant={variant}>
       {children}
     </S.Typography>
   );

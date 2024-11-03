@@ -1,10 +1,12 @@
 import styled, { css } from 'styled-components';
 
-type ContainerProps = {
+type SidebarProps = {
   collapsed: boolean;
 };
 
-export const Container = styled.aside<ContainerProps>`
+export const Container = styled('aside').withConfig({
+  shouldForwardProp: (prop) => prop !== 'collapsed',
+})<SidebarProps>`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -12,12 +14,10 @@ export const Container = styled.aside<ContainerProps>`
   white-space: nowrap;
   min-width: 60px;
   font-size: 0.9rem;
+  height: auto;
   width: ${({ collapsed }) => (collapsed ? '60px' : '280px')};
   transition: width 0.3s;
-  height: auto;
-  /* overflow: hidden; */
   background-color: #0f172a;
-  width: ${({ collapsed }) => (collapsed ? '60px' : '280px')};
 
   @media (max-width: 768px) {
     width: 60px;
@@ -60,7 +60,9 @@ export const Divider = styled.hr`
   border: 0.5px solid #6b7280;
 `;
 
-export const Footer = styled.div<ContainerProps>`
+export const Footer = styled('footer').withConfig({
+  shouldForwardProp: (prop) => prop !== 'collapsed',
+})<SidebarProps>`
   position: absolute;
   width: 100%;
   text-align: center;

@@ -9,7 +9,11 @@ type MenuItemProps = {
   isActive: boolean;
 };
 
-export const MenuItem = styled.li<MenuItemProps>`
+export const MenuItem = styled('li').withConfig({
+  // Evita que a propriedade siga para o elemento HTML na DOM
+  // propriedades iniciadas com $ são automaticamente ignoradas
+  shouldForwardProp: (prop) => prop !== 'isActive',
+})<MenuItemProps>`
   position: relative;
   padding: 0.75rem 1rem;
   color: #d4d4d8;
@@ -79,7 +83,9 @@ type TooltipProps = {
   isVisible: boolean;
 };
 
-export const Tooltip = styled.div<TooltipProps>`
+export const Tooltip = styled('div').withConfig({
+  shouldForwardProp: (prop) => prop !== 'isVisible',
+})<TooltipProps>`
   position: absolute;
   background-color: #333;
   color: #fff;

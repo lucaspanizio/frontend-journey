@@ -18,7 +18,10 @@ export interface TypographProps {
   color?: Color;
 }
 
-export const Typography = styled.span<TypographProps>`
+export const Typography = styled.span.withConfig({
+  // Note que não há problema em passar color para a DOM, pois essa prop existe nos elementos HTML
+  shouldForwardProp: (prop) => prop !== 'variant',
+})<TypographProps>`
   font-size: ${({ variant = 'p' }) => typographySizes[variant]};
   color: ${({ theme, color }) => color || theme.colors.text.light};
   line-height: 1.5;

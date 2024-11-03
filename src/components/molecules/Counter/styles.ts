@@ -22,7 +22,9 @@ interface IButtonProps {
   variant: 'inc' | 'dec' | 'reset';
 }
 
-export const Button = styled.button<IButtonProps>`
+export const Button = styled.div.withConfig({
+  shouldForwardProp: (prop) => prop !== 'variant',
+})<IButtonProps>`
   display: flex;
   justify-content: center;
   border-radius: 15px;

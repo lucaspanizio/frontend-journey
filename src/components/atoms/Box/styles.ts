@@ -7,7 +7,9 @@ export interface BoxProps extends MarginProps {
   backgroundColor?: Color;
 }
 
-export const Container = styled.div<BoxProps>`
+export const Container = styled.div.withConfig({
+  shouldForwardProp: (prop) => prop !== 'gap',
+})<BoxProps>`
   display: flex;
   flex-direction: column;
   width: 100%;
