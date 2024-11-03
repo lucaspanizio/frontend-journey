@@ -1,10 +1,10 @@
-import { styled } from 'styled-components';
+import { CSSProperties, styled } from 'styled-components';
 import { margin, MarginProps } from 'styled-system';
-import { theme } from '../../../global/theme';
-import { Color } from '../../../types/color';
+import { theme } from '@/global/theme';
+import { Color } from '@/types/color';
 
 export interface CardProps extends MarginProps {
-  gap?: number;
+  gap?: CSSProperties['gap'] | number;
   backgroundColor?: Color;
 }
 
@@ -13,7 +13,7 @@ export const Container = styled.div<CardProps>`
   flex-direction: column;
   background-color: ${({ backgroundColor }) => backgroundColor ?? '#111827'};
   border-radius: ${({ theme }) => theme.radius.md};
-  gap: ${({ gap }) => (gap !== undefined ? `${gap}px` : '0.5rem')};
+  gap: ${({ gap }) => (typeof gap === 'number' ? `${gap}px` : gap || '0.5rem')};
   ${margin}
 `;
 

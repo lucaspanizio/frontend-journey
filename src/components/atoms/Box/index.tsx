@@ -1,10 +1,11 @@
-import { ReactNode } from 'react';
+import { PropsWithChildren } from 'react';
+import { WithoutDollarPrefix } from '@/types/dolarPrefix';
+import { addDollarPrefix } from '@/utils/dolarPrefix';
 import * as S from './styles';
 
-interface IBoxProps extends S.BoxProps {
-  children: ReactNode;
-}
+// Alternativa para que as props de estilo não passem para o DOM
+interface IBoxProps extends WithoutDollarPrefix<S.BoxProps> {}
 
-export const Box = ({ children, ...rest }: IBoxProps) => {
-  return <S.Container {...rest}>{children}</S.Container>;
+export const Box = ({ children, ...rest }: PropsWithChildren<IBoxProps>) => {
+  return <S.Container {...addDollarPrefix(rest)}>{children}</S.Container>;
 };

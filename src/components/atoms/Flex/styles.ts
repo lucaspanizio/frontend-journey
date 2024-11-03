@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { CSSProperties } from 'styled-components';
 import {
   space,
   layout,
@@ -12,7 +12,7 @@ import {
 type StyleProps = SpaceProps & LayoutProps & FlexboxProps;
 
 export type FlexProps = StyleProps & {
-  gap?: number;
+  gap?: CSSProperties['gap'] | number;
 };
 
 export const Container = styled('div').withConfig({
@@ -20,7 +20,7 @@ export const Container = styled('div').withConfig({
     !['flexWrap', 'alignItems', 'marginTop'].includes(prop),
 })<FlexProps>`
   display: flex;
-  gap: ${({ gap }) => (gap !== undefined ? `${gap}px` : '0.5rem')};
+  gap: ${({ gap }) => (typeof gap === 'number' ? `${gap}px` : gap || '0.5rem')};
 
   ${compose(space, layout, flexbox)};
 `;

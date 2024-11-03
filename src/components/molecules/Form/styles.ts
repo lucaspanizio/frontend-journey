@@ -33,7 +33,7 @@ type ButtonProps = {
   variant?: TButtonVariant;
 };
 
-export const Button = styled.div.withConfig({
+export const Button = styled.button.withConfig({
   shouldForwardProp: (prop) => prop !== 'variant',
 })<ButtonProps>`
   cursor: pointer;
