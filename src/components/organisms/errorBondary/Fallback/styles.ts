@@ -40,7 +40,7 @@ export const RetryButton = styled.button`
   }
 `;
 
-export const ToastWrapper = styled.div`
+export const ToastButton = styled.button`
   position: absolute;
   display: flex;
   justify-content: center;
@@ -58,20 +58,26 @@ export const ToastWrapper = styled.div`
   white-space: nowrap;
   overflow: hidden;
 
-  transition: width 0.3s ease, background-color 0.3s ease,
-    border-radius 0.1s ease;
+  &:hover {
+    width: 110px;
+    border-radius: 20px;
+    background-color: #c83535;
+    transition: width 0.3s ease 0.1s, border-radius 0.3s ease 0.1s;
+  }
 
   &::after {
     font-size: 1.25rem;
     content: '!';
   }
 
-  &:hover {
-    width: 110px;
-    border-radius: 20px;
-    background-color: #c83535;
+  /* O texto só muda se o hover persistir por 0.1s */
+  &:hover::after {
+    animation: changeText 0.1s forwards;
+    animation-delay: 0.1s;
+  }
 
-    &::after {
+  @keyframes changeText {
+    100% {
       font-size: 1rem;
       content: 'Show more';
     }
