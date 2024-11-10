@@ -9,7 +9,6 @@ export const usePageTitle = () => {
   const foundMenu = MENUS.find((menu) => menu.path === pathname);
   const title = foundMenu ? `${appName} | ${foundMenu.title}` : appName;
 
-  MENUS;
   useEffect(() => {
     document.title = title;
   }, [pathname, title]);
