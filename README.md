@@ -58,14 +58,16 @@ Acesse http://localhost:4000 em seu navegador preferido.
 Na raiz do projeto, disponibilizei o script `deploy.sh`, que irá realizar o build da imagem e subir um container no Docker automaticamente. Caso o container já exista, o script foi preparado para substituí-lo com a nova imagem da aplicação.
 Portanto, para realizar o deploy da aplicação no Docker, siga os seguintes passos:
 
-*Obs.: para ter a aplicação em produção sem um servidor Linux, aconselho utilizar [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/pt-br/windows/wsl/install)*
+_Obs.: para ter a aplicação em produção sem um servidor Linux, aconselho utilizar [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/pt-br/windows/wsl/install)_
 
 <b>1.</b> No terminal de um ambiente Linux com Docker instalado, acesse o diretório da aplicação e execute o comando abaixo:
+
 ```bash
 . deploy.sh
 ```
 
 <b>2.</b> Consulte se o container está em execução com o seguinte comando:
+
 ```bash
 docker ps
 ```
@@ -80,10 +82,9 @@ Isso significa que o container foi criado e está em execução.
 No meu exemplo, acesso com localhost pois o Docker está instalado em minha própria máquina, mas se utilizou um servidor de fato, utilize o IP do mesmo.
 </br></br>
 
-
 ## 📜 Licença
 
-<p>Esse projeto está sob a <a href="https://github.com/lucaspanizio/frontend-journey/main/LICENSE">licença MIT</a>.<br>
+<p>Esse projeto está sob a <a href="https://github.com/lucaspanizio/frontend-journey/blob/main/LICENSE">licença MIT</a>.<br>
 <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
 </p>
 
