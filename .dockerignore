@@ -1,0 +1,32 @@
+# Ignorar arquivos de dependências do Node
+node_modules
+
+# Ignorar o diretórios de build local (se houver)
+dist/
+build/
+
+# Ignorar diretórios de testes e mocks
+**/__tests__/
+**/__mocks__/
+
+# Ignorar arquivos de testes
+**/*.test.*
+**/*.spec.*
+
+# Ignorar arquivos de log
+*.log
+
+# Ignorar diretórios e arquivos de configuração de IDE
+.vscode/
+
+# Ignorar arquivos de cache
+.dockerignore
+.dockerfile
+
+# Ignore arquivos da Vercel
+.vercelignore
+vercel.json
+
+# Ignorar arquivos do Git
+.github/
+.gitignore

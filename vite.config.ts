@@ -22,6 +22,13 @@ const generateAliases = (baseDir: string) => {
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  server: {
+    host: '0.0.0.0',
+    port: 4000,
+  },
+  build: {
+    outDir: 'dist',
+  },
   resolve: {
     alias: generateAliases('./src'),
   },

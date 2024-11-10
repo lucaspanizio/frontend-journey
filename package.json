@@ -1,21 +1,23 @@
 {
   "name": "frontend-journey",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
   "author": "José Lucas Panizio",
+  "type": "module",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lucaspanizio/frontend-journey.git"
+  },
+  "homepage": "https://panizio-frontend-journey.vercel.app",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "schema:example": "npx tsx src/schemas/examples/index.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
     "@reduxjs/toolkit": "^2.2.7",
-    "@types/styled-system": "^5.1.22",
-    "inquirer": "^10.1.8",
     "lucide-react": "^0.417.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -25,7 +27,6 @@
     "react-syntax-highlighter": "^15.5.0",
     "styled-components": "^6.1.12",
     "styled-system": "^5.1.5",
-    "tsx": "^4.17.0",
     "yup": "^1.4.0",
     "zustand": "^5.0.0-rc.2"
   },
@@ -36,16 +37,22 @@
     "@types/react-dom": "^18.3.0",
     "@types/react-redux": "^7.1.34",
     "@types/react-syntax-highlighter": "^15.5.13",
-    "@typescript-eslint/eslint-plugin": "^7.15.0",
-    "@typescript-eslint/parser": "^7.15.0",
+    "@types/styled-system": "^5.1.23",
+    "@typescript-eslint/eslint-plugin": "^8.13.0",
+    "@typescript-eslint/parser": "^8.13.0",
     "@vitejs/plugin-react": "^4.3.1",
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
+    "inquirer": "^12.0.1",
+    "tsx": "^4.19.2",
     "typescript": "^5.5.4",
     "vite": "^5.3.4",
     "vite-plugin-raw": "^1.0.3",
     "vite-plugin-string": "^1.2.3"
+  },
+  "engines": {
+    "node": "20.x"
   },
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

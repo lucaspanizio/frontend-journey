@@ -32,6 +32,7 @@
     },
   },
   "include": [
-    "src/**/*"
-, "vite.d.ts"  ]
+    "src/**/*",
+    "vite.d.ts"
+  ]
 }
