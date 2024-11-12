@@ -1,23 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import fs from 'fs';
-
-const generateAliases = (baseDir: string) => {
-  const srcPath = path.resolve(__dirname, baseDir);
-  const directories = fs
-    .readdirSync(srcPath, { withFileTypes: true })
-    .filter((dirent) => dirent.isDirectory())
-    .map((dirent) => dirent.name);
-
-  return directories.reduce(
-    (acc, dir) => {
-      acc[`@${dir}`] = path.resolve(srcPath, dir);
-      return acc;
-    },
-    { '@': srcPath } as Record<`@${string}`, string>,
-  );
-};
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -26,10 +9,10 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 4000,
   },
+  resolve: {
+    alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
+  },
   build: {
     outDir: 'dist',
-  },
-  resolve: {
-    alias: generateAliases('./src'),
   },
 });
