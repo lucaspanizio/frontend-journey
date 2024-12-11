@@ -1,4 +1,5 @@
-import { createGlobalStyle, css } from 'styled-components';
+import isPropValid from '@emotion/is-prop-valid';
+import { createGlobalStyle, css, WebTarget } from 'styled-components';
 
 const ResetCSS = css`
   *,
@@ -124,3 +125,7 @@ export const GlobalStyle = createGlobalStyle`
     letter-spacing: 0.04em;
   }
 `;
+
+export const shouldForwardProp = (propName: string, elementToBeRendered: WebTarget) => {
+  return typeof elementToBeRendered === 'string' ? isPropValid(propName) : true;
+};
