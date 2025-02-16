@@ -6,11 +6,12 @@ export const Container = styled.div`
   gap: 0.5rem;
 
   label {
-    color: #ef4444;
+    color: ${({ theme }) => theme.colors.error};
   }
 `
 
 export const Input = styled.input`
   padding: 0.5rem 1rem;
-  border-radius: 5px;
+  border-radius: ${({ theme }) => theme.radius.sm};
+  border: 1px solid #ccc;
 `

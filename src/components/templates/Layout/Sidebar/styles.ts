@@ -16,8 +16,9 @@ export const Container = styled('aside').withConfig({
   font-size: 0.9rem;
   height: auto;
   width: ${({ collapsed }) => (collapsed ? '60px' : '280px')};
+  background-color: ${({ theme }) => theme.colors.backgroundAccent};
+  box-shadow: ${({ theme }) => theme.shadow};
   transition: width 0.3s;
-  background-color: #0f172a;
 
   @media (max-width: 768px) {
     width: 60px;
@@ -28,12 +29,8 @@ export const HamburgerButton = styled.button`
   border: none;
   background: none;
   min-width: 30px;
-  color: #d4d4d8;
+  color: ${({ theme }) => theme.colors.text};
   cursor: pointer;
-
-  &:hover {
-    color: #fff;
-  }
 
   &:focus {
     outline: none;
@@ -46,7 +43,7 @@ export const Header = styled.div`
   width: 100%;
   margin-top: 1rem;
   padding: 0 1.2rem;
-  color: #d4d4d8;
+  color: ${({ theme }) => theme.colors.text.light};
 `
 
 export const Title = styled.span`
@@ -64,12 +61,11 @@ export const Footer = styled('footer').withConfig({
   shouldForwardProp: (prop) => prop !== 'collapsed',
 })<SidebarProps>`
   position: absolute;
-  width: 100%;
   text-align: center;
   font-size: 0.8rem;
   padding: 1rem;
   bottom: 0;
-  color: #d4d4d8;
+  color: ${({ theme }) => theme.colors.text.light};
 
   ${({ collapsed }) =>
     collapsed &&
@@ -77,4 +73,8 @@ export const Footer = styled('footer').withConfig({
       opacity: 0;
       visibility: hidden;
     `}
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `

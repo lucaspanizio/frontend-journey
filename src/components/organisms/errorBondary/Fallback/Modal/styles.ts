@@ -6,7 +6,7 @@ export const Backdrop = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: ${({ theme }) => theme.components.errorBoundary.backdropColor};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,17 +15,17 @@ export const Backdrop = styled.div`
 
 export const Wrapper = styled.div`
   position: relative;
-  background: #1c1c1e;
+  background: ${({ theme }) => theme.components.errorBoundary.modalBackground};
   width: 90%;
   max-width: 600px;
-  border-radius: 8px;
+  border-radius: ${({ theme }) => theme.radius.md};
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: ${({ theme }) => theme.shadow};
 `
 
 export const Header = styled.div`
   position: relative;
-  border-top: 4px solid #fa473b;
+  border-top: 4px solid ${({ theme }) => theme.components.errorBoundary.headerBorderTop};
   padding: 1rem;
 `
 
@@ -35,13 +35,9 @@ export const CloseButton = styled.button`
   right: 1rem;
   background: none;
   border: none;
-  color: #a8a29e;
+  color: ${({ theme }) => theme.components.errorBoundary.closeButtonColor};
   font-size: 1.5rem;
   cursor: pointer;
-
-  &:hover {
-    color: #fafafa;
-  }
 `
 
 export const Content = styled.div`
@@ -63,17 +59,17 @@ export const Content = styled.div`
 
 export const Message = styled.section`
   p {
-    color: #fa473b;
-    border-left: 3px solid #fa473b;
-    background-color: #2a1e1e;
+    color: ${({ theme }) => theme.components.errorBoundary.messageText};
+    border-left: 3px solid ${({ theme }) => theme.components.errorBoundary.messageBorder};
+    background-color: ${({ theme }) => theme.components.errorBoundary.messageBackground};
     padding: 1rem;
   }
 `
 
 export const Source = styled.section`
   p {
-    background-color: #111111;
-    color: #c6c7b8;
+    background-color: ${({ theme }) => theme.components.errorBoundary.sourceBackground};
+    color: ${({ theme }) => theme.components.errorBoundary.sourceText};
     padding: 1rem;
   }
 `
@@ -83,7 +79,7 @@ export const Stack = styled.section`
     cursor: pointer;
     border: none;
     font-size: 0.8rem;
-    color: #c6c7b8;
+    color: ${({ theme }) => theme.components.errorBoundary.stackText};
   }
 
   pre {
@@ -92,5 +88,6 @@ export const Stack = styled.section`
     overflow-y: scroll;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    background-color: ${({ theme }) => theme.components.errorBoundary.preBackground};
   }
 `

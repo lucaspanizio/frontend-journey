@@ -1,7 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 
-import { Sidebar } from '@/components/organisms/Sidebar'
+import { Sidebar } from '@/components/templates/Layout/Sidebar'
 import { usePageTitle } from '@/hooks/usePageTitle'
 
 import * as S from './styles'

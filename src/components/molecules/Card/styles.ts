@@ -12,7 +12,7 @@ export const Container = styled.div<CardProps>`
   display: flex;
   flex-direction: column;
   border-radius: ${({ theme }) => theme.radius.md};
-  background-color: ${({ backgroundColor }) => backgroundColor ?? '#111827'};
+  background-color: ${({ backgroundColor, theme }) => backgroundColor ?? theme.colors.backgroundAccent};
   gap: ${({ gap }) => (typeof gap === 'number' ? `${gap}px` : gap || '0.5rem')};
   ${margin}
 `
@@ -32,7 +32,7 @@ export type TitleProps = {
 export const Title = styled.h1<TitleProps>`
   display: flex;
   flex-direction: column;
-  color: ${({ theme, color }) => (color ? theme.colors[color] : theme.colors.text.light)};
+  color: ${({ theme, color }) => (color ? theme.colors[color] : theme.colors.text)};
 
   font-size: 1rem;
   font-weight: bold;
@@ -46,5 +46,5 @@ export const SubTitle = styled.span`
   display: flex;
   font-size: 0.825rem;
   margin-top: 0.25rem;
-  color: ${({ theme }) => theme.colors.text.light};
+  color: ${({ theme }) => theme.colors.text};
 `

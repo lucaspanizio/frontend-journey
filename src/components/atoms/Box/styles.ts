@@ -15,8 +15,9 @@ export const Container = styled.div<BoxProps>`
   padding: 2rem;
 
   border-radius: ${({ theme }) => theme.radius.md};
+  box-shadow: ${({ theme }) => theme.shadow};
   gap: ${({ $gap }) => (typeof $gap === 'number' ? `${$gap}px` : $gap || '0.5rem')};
-  background-color: ${({ $backgroundColor }) => $backgroundColor ?? '#111827'};
+  background-color: ${({ $backgroundColor, theme }) => $backgroundColor ?? theme.colors.backgroundAccent};
 
   ${margin}
 `

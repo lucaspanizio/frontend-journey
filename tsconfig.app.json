@@ -33,6 +33,6 @@
   },
   "include": [
     "src/**/*",
-    "vite.d.ts"
+    "src/@types/vite.d.ts"
   ]
 }

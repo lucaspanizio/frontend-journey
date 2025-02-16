@@ -12,15 +12,16 @@ export const Wrapper = styled.div`
 export const Title = styled.h1`
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #ef4444;
+  color: ${({ theme }) => theme.components.errorBoundary.titleColor};
 `
 
 export const Message = styled.p`
   font-size: 1.2rem;
+  color: ${({ theme }) => theme.components.errorBoundary.messageText};
 `
 
 export const ErrorMessage = styled.p`
-  color: red;
+  color: ${({ theme }) => theme.components.errorBoundary.errorMessageColor};
   margin-top: 0.5rem;
 `
 
@@ -29,15 +30,15 @@ export const RetryButton = styled.button`
   padding: 0.5rem 1rem;
   font-size: 1rem;
   cursor: pointer;
-  background-color: #007bff;
-  color: white;
   border: none;
-  border-radius: 4px;
   transition: background-color 0.3s;
+  border-radius: ${({ theme }) => theme.radius.sm};
+  background-color: ${({ theme }) => theme.colors.primary};
+  /* color: ${({ theme }) => theme.components.errorBoundary.retryButtonColor}; */
 
-  &:hover {
-    background-color: #0056b3;
-  }
+  /* &:hover {
+    background-color: ${({ theme }) => theme.components.errorBoundary.retryButtonHoverBackground};
+  } */
 `
 
 export const ToastButton = styled.button`

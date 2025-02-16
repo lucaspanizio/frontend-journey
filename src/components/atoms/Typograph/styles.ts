@@ -24,6 +24,6 @@ export const Typography = styled.span.withConfig({
   shouldForwardProp: (prop) => prop !== 'variant',
 })<TypographProps>`
   font-size: ${({ variant = 'p' }) => typographySizes[variant]};
-  color: ${({ theme, color }) => color || theme.colors.text.light};
+  color: ${({ theme, color }) => color || theme.colors.text};
   line-height: 1.5;
 `

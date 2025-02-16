@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
-import { MenuItem } from '@/components/organisms/Sidebar/MenuItem'
+import { MenuItem } from '@/components/templates/Layout/Sidebar/MenuItem'
 import { ROUTES } from '@/constants/routes'
 
 interface SidebarStore {

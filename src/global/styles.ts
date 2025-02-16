@@ -103,14 +103,9 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    color: #fafafa;
-    background-color: ${({ theme }) => theme.colors.background.dark};
+    color: ${({ theme }) => theme.colors.text};
+    background-color: ${({ theme }) => theme.colors.background};
     font-family: Poppins, Helvetica, Sans-Serif;
-  }
-
-  #root {
-    width: 100vw;
-    height: 100vh;
   }
 
   p + p {
@@ -118,11 +113,12 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   strong {
-    color: ${({ theme }) => theme.colors.text.light};
+    color: ${({ theme }) => theme.colors.text};
   }
 
-  code {
-    letter-spacing: 0.04em;
+  #root {
+    width: 100vw;
+    height: 100vh;
   }
 `
 

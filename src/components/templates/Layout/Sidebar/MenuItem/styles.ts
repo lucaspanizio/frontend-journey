@@ -10,15 +10,13 @@ type MenuItemProps = {
 }
 
 export const MenuItem = styled('li').withConfig({
-  // Evita que a propriedade siga para o elemento HTML na DOM
-  // propriedades iniciadas com $ são automaticamente ignoradas
   shouldForwardProp: (prop) => prop !== 'isActive',
 })<MenuItemProps>`
   position: relative;
   padding: 0.75rem 1rem;
-  color: #d4d4d8;
+  color: ${({ theme }) => theme.colors.text};
 
-  ${({ isActive }) =>
+  ${({ isActive, theme }) =>
     isActive &&
     css`
       &::before {
@@ -28,13 +26,17 @@ export const MenuItem = styled('li').withConfig({
         top: 0;
         bottom: 0;
         width: 4px;
-        background-color: #84cc16;
+        background-color: ${theme.colors.primary};
       }
     `}
 
   &:hover {
     cursor: pointer;
-    color: #fff;
+    color: ${({ theme }) => (theme.colors.name === 'dark' ? theme.colors.backgroundAccent : theme.colors.primary)};
+
+    ${({ theme }) => css`
+      background-color: ${theme.colors.backgroundAccent};
+    `}
   }
 
   svg {
@@ -71,7 +73,7 @@ export const MenuID = styled.span`
   width: 2rem;
   aspect-ratio: 1/1;
   border-radius: 50%;
-  border: 1px solid white;
+  outline: 1px solid ${({ theme }) => theme.colors.text};
 `
 
 export const MenuTitle = styled.span`
@@ -87,8 +89,8 @@ export const Tooltip = styled('div').withConfig({
   shouldForwardProp: (prop) => prop !== 'isVisible',
 })<TooltipProps>`
   position: absolute;
-  background-color: #333;
-  color: #fff;
+  background-color: ${({ theme }) => theme.colors.backgroundAccent};
+  color: ${({ theme }) => theme.colors.text};
   padding: 5px;
   border-radius: 4px;
   font-size: 12px;

@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import { Box } from '@/components/atoms/Box'
+
 import { ModalError } from './Modal'
 import * as S from './styles'
 
@@ -15,19 +17,21 @@ export const FallbackError = ({ error, onRetry }: FallbackProps) => {
   const closeModal = () => setIsOpenModal(false)
 
   return (
-    <S.Wrapper>
-      <S.Title>Ops! Algo deu errado.</S.Title>
-      <S.Message>Infelizmente, ocorreu um problema inesperado.</S.Message>
-      <p>Por favor, tente novamente.</p>
-      <S.RetryButton onClick={onRetry || (() => window.location.reload())}>Tentar novamente</S.RetryButton>
+    <Box>
+      <S.Wrapper>
+        <S.Title>Ops! Algo deu errado.</S.Title>
+        <S.Message>Infelizmente, ocorreu um problema inesperado.</S.Message>
+        <p>Por favor, tente novamente.</p>
+        <S.RetryButton onClick={onRetry || (() => window.location.reload())}>Tentar novamente</S.RetryButton>
 
-      {error && (
-        <>
-          {import.meta.env.MODE === 'development' && <S.ToastButton onClick={openModal} />}
+        {error && (
+          <>
+            {import.meta.env.MODE === 'development' && <S.ToastButton onClick={openModal} />}
 
-          {isOpenModal && <ModalError error={error} closeModal={closeModal} />}
-        </>
-      )}
-    </S.Wrapper>
+            {isOpenModal && <ModalError error={error} closeModal={closeModal} />}
+          </>
+        )}
+      </S.Wrapper>
+    </Box>
   )
 }
