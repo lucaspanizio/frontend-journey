@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import { ErrorBoundary } from '@/components/organisms/errorBondary'
 import { Layout } from '@/components/templates/Layout'
-import { ROUTES } from '@/keys/routes'
+import { ROUTES } from '@/constants/routes'
 import { ErrorPage as Error } from '@/pages/Error'
 
 const StateManagers = lazy(() =>
