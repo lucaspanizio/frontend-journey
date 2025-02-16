@@ -3,14 +3,14 @@
   Aplicação web em constante evolução, desenvolvida para exemplificar o uso de diversas tecnologias e padrões modernos no desenvolvimento frontend. Este projeto aborda conceitos fundamentais e avançados para criação de interfaces eficientes e bem estruturadas como:
 </p>
 
-- Alias path
-- Namespace import
-- Atomic Design
-- Compound Pattern
-- State Managers (Context API, Redux, Zustand)
-- Schemas Yup
-- Deploy com Docker
-- Error Boundary
+|                                   |                                    |
+| --------------------------------- | ---------------------------------- |
+| Alias path                        | ESlint e Prettier                  |
+| Namespace import                  | Atomic Design                      |
+| Compound Pattern                  | State Managers (Context API, Redux, Zustand) |
+| Schemas Yup                       | Code spliting (manual chunks)      |
+| Deploy com Docker                 | Error Boundary                     |
+
 
 <p align="center">
   <a href="#-pré-requisitos">☝ Pré-Requisitos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -84,8 +84,8 @@ No meu exemplo, acesso com localhost pois o Docker está instalado em minha pró
 
 ## 📜 Licença
 
-<p>Esse projeto está sob a <a href="https://github.com/lucaspanizio/frontend-journey/blob/main/LICENSE">licença MIT</a>.<br>
-<img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
+<p>Esse projeto está sob a <a href="https://github.com/lucaspanizio/frontend-journey/blob/main/LICENSE">licença MIT.<br>
+<a href="https://github.com/lucaspanizio/frontend-journey/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
 </p>
 
 #### Desenvolvido por José Lucas Panizio 🖖
