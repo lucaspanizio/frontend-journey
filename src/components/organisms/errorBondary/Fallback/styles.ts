@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -7,22 +7,22 @@ export const Wrapper = styled.div`
   text-align: center;
   position: relative;
   overflow: hidden;
-`;
+`
 
 export const Title = styled.h1`
   font-size: 2rem;
   margin-bottom: 1rem;
   color: #ef4444;
-`;
+`
 
 export const Message = styled.p`
   font-size: 1.2rem;
-`;
+`
 
 export const ErrorMessage = styled.p`
   color: red;
   margin-top: 0.5rem;
-`;
+`
 
 export const RetryButton = styled.button`
   margin-top: 1rem;
@@ -38,7 +38,7 @@ export const RetryButton = styled.button`
   &:hover {
     background-color: #0056b3;
   }
-`;
+`
 
 export const ToastButton = styled.button`
   position: absolute;
@@ -62,7 +62,9 @@ export const ToastButton = styled.button`
     width: 110px;
     border-radius: 20px;
     background-color: #c83535;
-    transition: width 0.3s ease 0.1s, border-radius 0.3s ease 0.1s;
+    transition:
+      width 0.3s ease 0.1s,
+      border-radius 0.3s ease 0.1s;
   }
 
   &::after {
@@ -82,4 +84,4 @@ export const ToastButton = styled.button`
       content: 'Show more';
     }
   }
-`;
+`

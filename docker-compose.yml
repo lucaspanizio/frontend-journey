@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: 'frontend-journey:${TAG:-latest}'
+    image: frontend-journey:${TAG-latest}
     container_name: frontend-journey
     ports:
       - '4000:80'

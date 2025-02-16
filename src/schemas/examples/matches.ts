@@ -1,4 +1,4 @@
-import * as yup from 'yup';
+import * as yup from 'yup'
 
 const schema = yup.object({
   phoneNumber: yup
@@ -9,14 +9,14 @@ const schema = yup.object({
       excludeEmptyString: false, // default
     })
     .required('Número de telefone é obrigatório'),
-});
+})
 
 // Entrada
 const data = {
   phoneNumber: '(12) 3456-7890',
-};
+}
 
 schema
   .validate(data)
   .then(() => console.log('Dados válidos!'))
-  .catch(({ errors }) => console.log('Erro de validação:', errors));
+  .catch(({ errors }) => console.log('Erro de validação:', errors))

@@ -21,8 +21,8 @@
  * // }
  */
 export type WithDollarPrefix<T> = {
-  [K in keyof T as `$${string & K}`]: T[K];
-};
+  [K in keyof T as `$${string & K}`]: T[K]
+}
 
 /**
  * Tipo utilitário que remove o prefixo `$` de todas as chaves de uma interface.
@@ -47,5 +47,5 @@ export type WithDollarPrefix<T> = {
  * // }
  */
 export type WithoutDollarPrefix<T> = {
-  [K in keyof T as K extends `$${infer U}` ? U : K]: T[K];
-};
+  [K in keyof T as K extends `$${infer U}` ? U : K]: T[K]
+}

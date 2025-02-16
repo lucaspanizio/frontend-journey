@@ -3,8 +3,7 @@ export const monokaiDarkSoda = {
     color: '#f8f8f2',
     fontSize: '13px',
     textShadow: 'none',
-    fontFamily:
-      'Menlo, Monaco, Consolas, "Andale Mono", "Ubuntu Mono", "Courier New", monospace',
+    fontFamily: 'Menlo, Monaco, Consolas, "Andale Mono", "Ubuntu Mono", "Courier New", monospace',
     direction: 'ltr',
     textAlign: 'left',
     whiteSpace: 'pre',
@@ -27,8 +26,7 @@ export const monokaiDarkSoda = {
     color: '#f8f8f2',
     fontSize: '16px',
     textShadow: 'none',
-    fontFamily:
-      'Menlo, Monaco, Consolas, "Andale Mono", "Ubuntu Mono", "Courier New", monospace',
+    fontFamily: 'Menlo, Monaco, Consolas, "Andale Mono", "Ubuntu Mono", "Courier New", monospace',
     direction: 'ltr',
     textAlign: 'left',
     whiteSpace: 'pre',
@@ -282,4 +280,4 @@ export const monokaiDarkSoda = {
     boxShadow: 'inset 5px 0 0 #f7d87c',
     zIndex: '0',
   },
-};
+}

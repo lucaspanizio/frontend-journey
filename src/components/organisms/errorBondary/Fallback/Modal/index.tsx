@@ -1,24 +1,24 @@
-import { useState } from 'react';
-import * as S from './styles';
+import { useState } from 'react'
+import * as S from './styles'
 
 interface IModalErrorProps {
-  error: Error;
-  closeModal: () => void;
+  error: Error
+  closeModal: () => void
 }
 
 export const ModalError = ({ error, closeModal }: IModalErrorProps) => {
-  const [isStackVisible, setStackVisible] = useState(false);
+  const [isStackVisible, setStackVisible] = useState(false)
 
   const getFilePath = () => {
     if (error && error.stack) {
-      const match = error.stack.match(/at (.+?)(:\d+:\d+)/);
+      const match = error.stack.match(/at (.+?)(:\d+:\d+)/)
       if (match) {
-        const fullPath = match[1].trim();
-        return fullPath.replace(/^.*\/src\//, 'src/');
+        const fullPath = match[1].trim()
+        return fullPath.replace(/^.*\/src\//, 'src/')
       }
     }
-    return 'No file path found';
-  };
+    return 'No file path found'
+  }
 
   const getStackTrace = () => {
     if (error && error.stack) {
@@ -26,10 +26,10 @@ export const ModalError = ({ error, closeModal }: IModalErrorProps) => {
         .split('\n')
         .slice(1)
         .map((line) => line.trim())
-        .join('\n');
+        .join('\n')
     }
-    return 'No stack trace available';
-  };
+    return 'No stack trace available'
+  }
 
   return (
     <S.Backdrop onClick={closeModal}>
@@ -52,14 +52,12 @@ export const ModalError = ({ error, closeModal }: IModalErrorProps) => {
           <S.Stack>
             <h2>Call Stack</h2>
             <p onClick={() => setStackVisible(!isStackVisible)}>
-              {isStackVisible
-                ? 'Hide collapsed frames'
-                : 'Show collapsed frames'}
+              {isStackVisible ? 'Hide collapsed frames' : 'Show collapsed frames'}
             </p>
             {isStackVisible && <pre>{getStackTrace()}</pre>}
           </S.Stack>
         </S.Content>
       </S.Wrapper>
     </S.Backdrop>
-  );
-};
+  )
+}

@@ -1,10 +1,10 @@
-import { MenuIcon } from 'lucide-react';
-import { useSidebar } from '@/store/zustand/sidebar';
-import { MenuList } from './MenuList';
-import * as S from './styles';
+import { MenuIcon } from 'lucide-react'
+import { useSidebar } from '@/store/zustand/sidebar'
+import { MenuList } from './MenuList'
+import * as S from './styles'
 
 export const Sidebar = () => {
-  const { collapsed, toggle } = useSidebar();
+  const { collapsed, toggle } = useSidebar()
 
   return (
     <S.Container collapsed={collapsed}>
@@ -21,5 +21,5 @@ export const Sidebar = () => {
 
       <S.Footer collapsed={collapsed}>Developed by Panizio</S.Footer>
     </S.Container>
-  );
-};
+  )
+}

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
@@ -8,9 +8,9 @@ export const Container = styled.div`
   label {
     color: #ef4444;
   }
-`;
+`
 
 export const Input = styled.input`
   padding: 0.5rem 1rem;
   border-radius: 5px;
-`;
+`

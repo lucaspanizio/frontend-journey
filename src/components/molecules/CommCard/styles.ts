@@ -1,11 +1,11 @@
-import { CSSProperties, styled } from 'styled-components';
-import { margin, MarginProps } from 'styled-system';
-import { theme } from '@/global/theme';
-import { Color } from '@/types/color';
+import { CSSProperties, styled } from 'styled-components'
+import { margin, MarginProps } from 'styled-system'
+import { theme } from '@/global/theme'
+import { Color } from '@/types/color'
 
 export interface CardProps extends MarginProps {
-  gap?: CSSProperties['gap'] | number;
-  backgroundColor?: Color;
+  gap?: CSSProperties['gap'] | number
+  backgroundColor?: Color
 }
 
 export const Container = styled.div<CardProps>`
@@ -15,7 +15,7 @@ export const Container = styled.div<CardProps>`
   border-radius: ${({ theme }) => theme.radius.md};
   gap: ${({ gap }) => (typeof gap === 'number' ? `${gap}px` : gap || '0.5rem')};
   ${margin}
-`;
+`
 
 export const ContainerTitle = styled.div<CardProps>`
   display: flex;
@@ -23,11 +23,11 @@ export const ContainerTitle = styled.div<CardProps>`
   flex: 0 1 auto;
   gap: 0.8rem;
   ${margin}
-`;
+`
 
 export type IconProps = {
-  background?: Color;
-};
+  background?: Color
+}
 
 export const ContainerIcon = styled.div<IconProps>`
   display: flex;
@@ -35,19 +35,17 @@ export const ContainerIcon = styled.div<IconProps>`
   padding: 0.8rem;
 
   border-radius: ${({ theme }) => theme.radius.md};
-  background-color: ${({ theme, background }) =>
-    background ? theme.colors[background] : theme.colors.primary};
-`;
+  background-color: ${({ theme, background }) => (background ? theme.colors[background] : theme.colors.primary)};
+`
 
 export type TitleProps = {
-  color?: keyof typeof theme.colors | string;
-};
+  color?: keyof typeof theme.colors | string
+}
 
 export const Title = styled.h1<TitleProps>`
   display: flex;
   flex-direction: column;
-  color: ${({ theme, color }) =>
-    color ? theme.colors[color] : theme.colors.text.light};
+  color: ${({ theme, color }) => (color ? theme.colors[color] : theme.colors.text.light)};
 
   font-size: 1rem;
   font-weight: bold;
@@ -55,11 +53,11 @@ export const Title = styled.h1<TitleProps>`
   & > * {
     font-size: 1rem;
   }
-`;
+`
 
 export const SubTitle = styled.span`
   display: flex;
   font-size: 0.825rem;
   margin-top: 0.25rem;
   color: ${({ theme }) => theme.colors.text.light};
-`;
+`

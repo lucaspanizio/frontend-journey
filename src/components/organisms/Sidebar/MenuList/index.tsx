@@ -1,9 +1,9 @@
-import { useSidebar } from '@/store/zustand/sidebar';
-import { MenuItem } from '../MenuItem';
-import * as S from './styles';
+import { useSidebar } from '@/store/zustand/sidebar'
+import { MenuItem } from '../MenuItem'
+import * as S from './styles'
 
 export const MenuList = () => {
-  const { menus } = useSidebar();
+  const { menus } = useSidebar()
 
   return (
     <S.MenuList>
@@ -11,5 +11,5 @@ export const MenuList = () => {
         <MenuItem key={menu.id} data={menu} />
       ))}
     </S.MenuList>
-  );
-};
+  )
+}

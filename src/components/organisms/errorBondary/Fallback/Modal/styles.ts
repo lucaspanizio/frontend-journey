@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Backdrop = styled.div`
   position: fixed;
@@ -11,7 +11,7 @@ export const Backdrop = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 1000;
-`;
+`
 
 export const Wrapper = styled.div`
   position: relative;
@@ -21,13 +21,13 @@ export const Wrapper = styled.div`
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-`;
+`
 
 export const Header = styled.div`
   position: relative;
   border-top: 4px solid #fa473b;
   padding: 1rem;
-`;
+`
 
 export const CloseButton = styled.button`
   position: absolute;
@@ -42,7 +42,7 @@ export const CloseButton = styled.button`
   &:hover {
     color: #fafafa;
   }
-`;
+`
 
 export const Content = styled.div`
   display: flex;
@@ -59,7 +59,7 @@ export const Content = styled.div`
     font-weight: bold;
     text-align: left;
   }
-`;
+`
 
 export const Message = styled.section`
   p {
@@ -68,7 +68,7 @@ export const Message = styled.section`
     background-color: #2a1e1e;
     padding: 1rem;
   }
-`;
+`
 
 export const Source = styled.section`
   p {
@@ -76,7 +76,7 @@ export const Source = styled.section`
     color: #c6c7b8;
     padding: 1rem;
   }
-`;
+`
 
 export const Stack = styled.section`
   p {
@@ -93,4 +93,4 @@ export const Stack = styled.section`
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
-`;
+`

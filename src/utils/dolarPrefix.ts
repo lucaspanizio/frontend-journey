@@ -1,4 +1,4 @@
-import { WithDollarPrefix, WithoutDollarPrefix } from '@/types/dolarPrefix';
+import { WithDollarPrefix, WithoutDollarPrefix } from '@/types/dolarPrefix'
 
 /**
  * Adiciona um prefixo de cifrão (`$`) a cada chave das propriedades do objeto fornecido.
@@ -14,12 +14,8 @@ import { WithDollarPrefix, WithoutDollarPrefix } from '@/types/dolarPrefix';
  * const prefixedProps = addDollarPrefix(originalProps);
  * // Resultado: { $size: 'large', $color: 'red' }
  */
-export function addDollarPrefix<T extends object>(
-  props: T,
-): WithDollarPrefix<T> {
-  return Object.fromEntries(
-    Object.entries(props).map(([key, value]) => [`$${key}`, value]),
-  ) as WithDollarPrefix<T>;
+export function addDollarPrefix<T extends object>(props: T): WithDollarPrefix<T> {
+  return Object.fromEntries(Object.entries(props).map(([key, value]) => [`$${key}`, value])) as WithDollarPrefix<T>
 }
 
 /**
@@ -36,13 +32,8 @@ export function addDollarPrefix<T extends object>(
  * const originalProps = removeDollarPrefix(prefixedProps);
  * // Result: { size: 'large', color: 'red' }
  */
-export function removeDollarPrefix<T extends object>(
-  props: T,
-): WithoutDollarPrefix<T> {
+export function removeDollarPrefix<T extends object>(props: T): WithoutDollarPrefix<T> {
   return Object.fromEntries(
-    Object.entries(props).map(([key, value]) => [
-      key.startsWith('$') ? key.slice(1) : key,
-      value,
-    ]),
-  ) as WithoutDollarPrefix<T>;
+    Object.entries(props).map(([key, value]) => [key.startsWith('$') ? key.slice(1) : key, value]),
+  ) as WithoutDollarPrefix<T>
 }

@@ -1,11 +1,11 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { UndoIcon } from 'lucide-react';
-import { Flex } from '@/components/atoms/Flex';
-import * as S from './styles';
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import { UndoIcon } from 'lucide-react'
+import { Flex } from '@/components/atoms/Flex'
+import * as S from './styles'
 
 export const NotFound: React.FC = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   return (
     <S.Container>
@@ -19,5 +19,5 @@ export const NotFound: React.FC = () => {
         </Flex>
       </S.Button>
     </S.Container>
-  );
-};
+  )
+}

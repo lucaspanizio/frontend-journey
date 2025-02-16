@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Color } from '../../../types/color';
+import styled from 'styled-components'
+import { Color } from '../../../types/color'
 
 export const typographySizes = {
   h1: '2rem',
@@ -11,11 +11,11 @@ export const typographySizes = {
   p: '1rem',
   span: '1rem',
   small: '0.875rem',
-} as const;
+} as const
 
 export interface TypographProps {
-  variant?: keyof typeof typographySizes;
-  color?: Color;
+  variant?: keyof typeof typographySizes
+  color?: Color
 }
 
 export const Typography = styled.span.withConfig({
@@ -25,4 +25,4 @@ export const Typography = styled.span.withConfig({
   font-size: ${({ variant = 'p' }) => typographySizes[variant]};
   color: ${({ theme, color }) => color || theme.colors.text.light};
   line-height: 1.5;
-`;
+`

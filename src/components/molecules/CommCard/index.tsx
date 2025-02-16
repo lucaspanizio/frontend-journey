@@ -1,23 +1,16 @@
-import { PropsWithChildren, ReactNode } from 'react';
-import { Color } from '@/types/color';
-import { Flex } from '@/components/atoms/Flex';
-import * as S from './styles';
+import { PropsWithChildren, ReactNode } from 'react'
+import { Color } from '@/types/color'
+import { Flex } from '@/components/atoms/Flex'
+import * as S from './styles'
 
 interface ICardProps extends S.CardProps {
-  icon?: ReactNode;
-  title?: string;
-  subtitle?: string;
-  color?: Color;
+  icon?: ReactNode
+  title?: string
+  subtitle?: string
+  color?: Color
 }
 
-export const CommCard = ({
-  icon,
-  color,
-  title,
-  subtitle,
-  children,
-  ...rest
-}: PropsWithChildren<ICardProps>) => {
+export const CommCard = ({ icon, color, title, subtitle, children, ...rest }: PropsWithChildren<ICardProps>) => {
   return (
     <S.Container {...rest}>
       <Flex alignItems="center">
@@ -27,5 +20,5 @@ export const CommCard = ({
       {subtitle && <S.SubTitle color={color}>{subtitle}</S.SubTitle>}
       {children}
     </S.Container>
-  );
-};
+  )
+}

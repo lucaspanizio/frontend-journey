@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
@@ -13,18 +13,18 @@ export const Container = styled.div`
     background-color: ${colors.background.dark};
     color: ${colors.text.light};
   `};
-`;
+`
 
 export const ErrorCode = styled.h1`
   font-size: 5rem;
   margin: 0;
   color: #dc3545;
-`;
+`
 
 export const ErrorMessage = styled.h2`
   font-size: 2rem;
   margin: 0.5rem 0 2rem;
-`;
+`
 
 export const Button = styled.button`
   padding: 0.75rem 1rem;
@@ -40,4 +40,4 @@ export const Button = styled.button`
   &:hover {
     background-color: #0056b3;
   }
-`;
+`

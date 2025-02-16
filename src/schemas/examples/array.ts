@@ -1,4 +1,4 @@
-import * as yup from 'yup';
+import * as yup from 'yup'
 
 const personSchema = yup.object({
   name: yup.string().required('Nome é obrigatório'),
@@ -7,24 +7,24 @@ const personSchema = yup.object({
     .positive('Idade deve ser um número positivo')
     .integer('Idade deve ser um número inteiro')
     .required('Idade é obrigatória'),
-});
+})
 
 const peopleSchema = yup
   .array()
   .of(personSchema) // poderia ser definido diretamente aqui
-  .min(1, 'O array deve conter pelo menos um elemento');
+  .min(1, 'O array deve conter pelo menos um elemento')
 
 // Entrada
 const peopleData = [
   { name: 'John Doe', age: 30 },
   { name: 'Jane Smith', age: 25 },
-];
+]
 
 peopleSchema
   .validate(peopleData, { abortEarly: false })
   .then(() => {
-    console.log('Dados válidos!');
+    console.log('Dados válidos!')
   })
   .catch((err) => {
-    console.log('Erro de validação:', err.errors);
-  });
+    console.log('Erro de validação:', err.errors)
+  })

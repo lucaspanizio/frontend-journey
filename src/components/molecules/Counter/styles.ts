@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.div`
   display: flex;
@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: 130px;
-`;
+`
 
 export const Display = styled.input`
   padding: 0.5rem 1rem;
@@ -16,10 +16,10 @@ export const Display = styled.input`
   background-color: #334155;
   margin-bottom: 0.5rem;
   width: 100%;
-`;
+`
 
 interface IButtonProps {
-  variant: 'inc' | 'dec' | 'reset';
+  variant: 'inc' | 'dec' | 'reset'
 }
 
 export const Button = styled.div.withConfig({
@@ -37,16 +37,16 @@ export const Button = styled.div.withConfig({
       case 'inc':
         return css`
           background-color: #4caf50;
-        `;
+        `
       case 'dec':
         return css`
           background-color: #f44336;
-        `;
+        `
       case 'reset':
         return css`
           color: black;
           background-color: #dedede;
-        `;
+        `
     }
   }}
-`;
+`

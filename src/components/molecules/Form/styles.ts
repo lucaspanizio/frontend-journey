@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components'
 
-type TButtonVariant = 'confirm' | 'deny';
-type TButtonSize = 'sm' | 'md' | 'lg';
+type TButtonVariant = 'confirm' | 'deny'
+type TButtonSize = 'sm' | 'md' | 'lg'
 
 const ButtonVariant = {
   confirm: css`
@@ -11,7 +11,7 @@ const ButtonVariant = {
     background-color: #dc2626;
     color: #fafafa;
   `,
-};
+}
 
 const ButtonSize = {
   sm: css`
@@ -26,12 +26,12 @@ const ButtonSize = {
     font-size: 1rem;
     padding: 0.75rem 1.5rem;
   `,
-};
+}
 
 type ButtonProps = {
-  size?: TButtonSize;
-  variant?: TButtonVariant;
-};
+  size?: TButtonSize
+  variant?: TButtonVariant
+}
 
 export const Button = styled.button.withConfig({
   shouldForwardProp: (prop) => prop !== 'variant',
@@ -42,11 +42,11 @@ export const Button = styled.button.withConfig({
   border-radius: 5px;
   ${({ size }) => size && ButtonSize[size]}
   ${({ variant }) => variant && ButtonVariant[variant]}
-`;
+`
 
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 1rem;
   font-size: 0.8rem;
-`;
+`

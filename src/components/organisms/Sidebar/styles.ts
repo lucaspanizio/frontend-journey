@@ -1,8 +1,8 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components'
 
 type SidebarProps = {
-  collapsed: boolean;
-};
+  collapsed: boolean
+}
 
 export const Container = styled('aside').withConfig({
   shouldForwardProp: (prop) => prop !== 'collapsed',
@@ -22,7 +22,7 @@ export const Container = styled('aside').withConfig({
   @media (max-width: 768px) {
     width: 60px;
   }
-`;
+`
 
 export const HamburgerButton = styled.button`
   border: none;
@@ -38,7 +38,7 @@ export const HamburgerButton = styled.button`
   &:focus {
     outline: none;
   }
-`;
+`
 
 export const Header = styled.div`
   display: flex;
@@ -47,18 +47,18 @@ export const Header = styled.div`
   margin-top: 1rem;
   padding: 0 1.2rem;
   color: #d4d4d8;
-`;
+`
 
 export const Title = styled.span`
   font-size: 1.1rem;
   padding-left: 1rem;
   overflow-x: hidden;
-`;
+`
 
 export const Divider = styled.hr`
   margin: 1rem 0.5rem;
   border: 0.5px solid #6b7280;
-`;
+`
 
 export const Footer = styled('footer').withConfig({
   shouldForwardProp: (prop) => prop !== 'collapsed',
@@ -77,4 +77,4 @@ export const Footer = styled('footer').withConfig({
       opacity: 0;
       visibility: hidden;
     `}
-`;
+`

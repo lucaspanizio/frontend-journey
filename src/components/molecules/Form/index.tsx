@@ -1,29 +1,26 @@
-import * as yup from 'yup';
-import { FormProvider, useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { Flex } from '@/components/atoms/Flex';
-import { Input } from '../Input';
-import * as S from './styles';
+import * as yup from 'yup'
+import { FormProvider, useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import { Flex } from '@/components/atoms/Flex'
+import { Input } from '../Input'
+import * as S from './styles'
 
 const schema = yup.object({
   username: yup.string().required('Usuário é obrigatório!'),
-  email: yup
-    .string()
-    .email('Esse não é um email válido!')
-    .required('Email é obrigatório!'),
-});
+  email: yup.string().email('Esse não é um email válido!').required('Email é obrigatório!'),
+})
 
-type FormValues = yup.InferType<typeof schema>;
+type FormValues = yup.InferType<typeof schema>
 
 export const Form = () => {
   const form = useForm<FormValues>({
     resolver: yupResolver(schema),
     mode: 'onSubmit',
-  });
+  })
 
   const onSubmit = (data: FormValues) => {
-    console.log('Form data', data);
-  };
+    console.log('Form data', data)
+  }
 
   return (
     <S.Form onSubmit={form.handleSubmit(onSubmit)}>
@@ -43,5 +40,5 @@ export const Form = () => {
         </S.Button>
       </Flex>
     </S.Form>
-  );
-};
+  )
+}
