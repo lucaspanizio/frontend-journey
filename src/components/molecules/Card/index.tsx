@@ -1,5 +1,7 @@
 import { PropsWithChildren } from 'react'
+
 import { Color } from '@/types/color'
+
 import * as S from './styles'
 
 interface ICardProps extends S.CardProps {}

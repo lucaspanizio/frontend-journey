@@ -1,5 +1,6 @@
-import { margin, MarginProps } from 'styled-system'
 import { CSSProperties, styled } from 'styled-components'
+import { margin, MarginProps } from 'styled-system'
+
 import { Color } from '@/types/color'
 
 export interface CardProps extends MarginProps {

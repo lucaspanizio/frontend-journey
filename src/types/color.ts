@@ -1,4 +1,5 @@
 import { CSSProperties } from 'styled-components'
+
 import { theme } from '../global/theme'
 
 type RecursiveKeyOf<T> = {

@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+
 import { MenuItem } from '@/components/organisms/Sidebar/MenuItem'
 import { ROUTES } from '@/keys/routes'
 

@@ -1,6 +1,8 @@
 import { PropsWithChildren, ReactNode } from 'react'
-import { Color } from '@/types/color'
+
 import { Flex } from '@/components/atoms/Flex'
+import { Color } from '@/types/color'
+
 import * as S from './styles'
 
 interface ICardProps extends S.CardProps {

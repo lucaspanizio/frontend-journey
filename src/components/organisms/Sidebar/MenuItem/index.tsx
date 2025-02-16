@@ -1,8 +1,10 @@
-import { useState } from 'react'
 import { ZapIcon } from 'lucide-react'
+import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { useSidebar } from '@/store/zustand/sidebar'
+
 import { Flex } from '@/components/atoms/Flex'
+import { useSidebar } from '@/store/zustand/sidebar'
+
 import * as S from './styles'
 
 export type MenuItem = {

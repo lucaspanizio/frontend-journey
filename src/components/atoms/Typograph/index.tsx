@@ -1,4 +1,5 @@
 import { PropsWithChildren } from 'react'
+
 import * as S from './styles'
 
 interface ITypographyProps extends S.TypographProps {}

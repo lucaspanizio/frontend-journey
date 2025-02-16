@@ -1,10 +1,11 @@
 import { Provider as ReduxProvider } from 'react-redux'
 import { StyleSheetManager, ThemeProvider } from 'styled-components'
+
+import { GlobalStyle, shouldForwardProp } from '@/global/styles'
+import { theme } from '@/global/theme'
+import { AppRoutes } from '@/routes'
 import { CounterProvider as ContextProvider } from '@/store/context/counter'
 import { store } from '@/store/redux'
-import { AppRoutes } from '@/routes'
-import { theme } from '@/global/theme'
-import { GlobalStyle, shouldForwardProp } from '@/global/styles'
 
 export function App() {
   return (

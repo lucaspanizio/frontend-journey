@@ -1,9 +1,9 @@
 import React, { createContext, useState, ReactNode } from 'react'
+
 import { Counter } from '@/components/molecules/Counter'
 
 export interface ICounterContext extends Counter {}
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const CounterContext = createContext<ICounterContext>({} as ICounterContext)
 
 interface ICounterProvider {

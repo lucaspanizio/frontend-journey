@@ -1,5 +1,6 @@
 import { CSSProperties, styled } from 'styled-components'
 import { margin, MarginProps } from 'styled-system'
+
 import { theme } from '@/global/theme'
 import { Color } from '@/types/color'
 

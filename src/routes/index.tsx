@@ -1,9 +1,10 @@
 import { Suspense, lazy } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { ROUTES } from '@/keys/routes'
-import { ErrorPage as Error } from '@/pages/Error'
+
 import { ErrorBoundary } from '@/components/organisms/errorBondary'
 import { Layout } from '@/components/templates/Layout'
+import { ROUTES } from '@/keys/routes'
+import { ErrorPage as Error } from '@/pages/Error'
 
 const StateManagers = lazy(() =>
   import('@/pages/StateManagers').then((module) => ({

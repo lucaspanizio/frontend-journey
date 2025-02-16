@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+
 import { Counter } from '@/components/molecules/Counter'
 
 const initialState = {

@@ -1,5 +1,6 @@
 // import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { Prism as SyntaxHighlighter, SyntaxHighlighterProps } from 'react-syntax-highlighter'
+
 import { monokaiDarkSoda } from './settings'
 import * as S from './styles'
 

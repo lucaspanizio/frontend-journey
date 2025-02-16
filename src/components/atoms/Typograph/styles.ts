@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 import { Color } from '../../../types/color'
 
 export const typographySizes = {

@@ -1,8 +1,8 @@
 import { execSync } from 'child_process'
 import * as fs from 'fs'
+import inquirer from 'inquirer'
 import * as path from 'path'
 import { fileURLToPath } from 'url'
-import inquirer from 'inquirer'
 
 // Obtém o diretório do arquivo atual
 const __filename = fileURLToPath(import.meta.url)
@@ -27,7 +27,6 @@ const runScript = async () => {
     },
   ]
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { filePath } = await inquirer.prompt(questions as any)
 
   console.log(`Executando ${path.basename(filePath)}...`)

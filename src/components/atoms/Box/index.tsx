@@ -1,6 +1,8 @@
 import { PropsWithChildren } from 'react'
+
 import { WithoutDollarPrefix } from '@/types/dolarPrefix'
 import { addDollarPrefix } from '@/utils/dolarPrefix'
+
 import * as S from './styles'
 
 // Alternativa para que as props de estilo não passem para o DOM

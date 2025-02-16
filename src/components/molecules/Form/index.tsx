@@ -1,7 +1,9 @@
-import * as yup from 'yup'
-import { FormProvider, useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { FormProvider, useForm } from 'react-hook-form'
+import * as yup from 'yup'
+
 import { Flex } from '@/components/atoms/Flex'
+
 import { Input } from '../Input'
 import * as S from './styles'
 
