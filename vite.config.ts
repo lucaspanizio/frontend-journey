@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import path from 'path';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,38 +12,37 @@ export default defineConfig({
   resolve: {
     alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
   },
+  base: '/',
   build: {
     outDir: 'dist',
+    target: 'es2020',
     rollupOptions: {
       output: {
-        chunkFileNames: '[name].[hash].js',
-        assetFileNames: 'assets/[name].[ext]',
         entryFileNames: '[name].[hash].js',
+        chunkFileNames: '[name].[hash].js',
+        assetFileNames: '[name].[ext]',
         manualChunks(id) {
-          const reactLibs = ['react', 'react-dom', 'react-router'];
-          if (reactLibs.some((lib) => id.includes(`node_modules/${lib}`))) {
-            return 'vendor/react';
-          }
-
           if (id.includes('node_modules')) {
-            return 'vendor/chunk';
+            return 'vendor/libs'
           }
 
           if (id.includes('src/pages')) {
-            const parts = id.split('src/pages/')[1].split('/');
-            const pageName = parts[0];
-            return `pages/${pageName}`;
+            const parts = id.split('src/pages/')[1].split('/')
+            const pageName = parts[0]
+            return `pages/${pageName}`
           }
 
           if (id.includes('src/components/')) {
-            const parts = id.split('src/components/')[1].split('/'); // atoms, molecules, organisms...
-            const componentName = parts[parts.length - 2]; // Box, Flex, Card ...
-            return `components/${componentName}`;
+            const parts = id.split('src/components/')[1].split('/')
+            const componentName = parts[parts.length - 2]
+            const componentCategory = parts[0]
+
+            return `components/${componentCategory}/${componentName}`
           }
 
-          return null; // Outros arquivos não precisam de chunk separado
+          return null
         },
       },
     },
   },
-});
+})
