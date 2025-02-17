@@ -32,7 +32,7 @@ export const MenuItem = styled('li').withConfig({
 
   &:hover {
     cursor: pointer;
-    color: ${({ theme }) => (theme.colors.name === 'dark' ? theme.colors.backgroundAccent : theme.colors.primary)};
+    color: ${({ theme }) => theme.colors.primary};
 
     ${({ theme }) => css`
       background-color: ${theme.colors.backgroundAccent};

@@ -1,6 +1,6 @@
 import { CSSProperties } from 'styled-components'
 
-import { themeBase as theme } from '@/global/themes'
+import { dark as theme } from '@/global/themes'
 
 type RecursiveKeyOf<T> = {
   [K in keyof T & string]: T[K] extends object ? `${K}` | `${K}.${RecursiveKeyOf<T[K]>}` : `${K}`

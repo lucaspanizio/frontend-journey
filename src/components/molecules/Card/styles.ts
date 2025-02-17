@@ -32,7 +32,7 @@ export type TitleProps = {
 export const Title = styled.h1<TitleProps>`
   display: flex;
   flex-direction: column;
-  color: ${({ theme, color }) => (color ? theme.colors[color] : theme.colors.text)};
+  color: ${({ theme, color }) => color || theme.colors.text};
 
   font-size: 1rem;
   font-weight: bold;

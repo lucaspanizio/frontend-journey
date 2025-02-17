@@ -43,7 +43,7 @@ export const Header = styled.div`
   width: 100%;
   margin-top: 1rem;
   padding: 0 1.2rem;
-  color: ${({ theme }) => theme.colors.text.light};
+  color: ${({ theme }) => theme.colors.text};
 `
 
 export const Title = styled.span`
@@ -65,7 +65,7 @@ export const Footer = styled('footer').withConfig({
   font-size: 0.8rem;
   padding: 1rem;
   bottom: 0;
-  color: ${({ theme }) => theme.colors.text.light};
+  color: ${({ theme }) => theme.colors.text};
 
   ${({ collapsed }) =>
     collapsed &&

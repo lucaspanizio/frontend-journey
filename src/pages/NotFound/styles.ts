@@ -10,8 +10,8 @@ export const Container = styled.div`
   padding: 1rem;
 
   ${({ theme: { colors } }) => css`
-    background-color: ${colors.background.dark};
-    color: ${colors.text.light};
+    background-color: ${colors.background};
+    color: ${colors.text};
   `};
 `
 
