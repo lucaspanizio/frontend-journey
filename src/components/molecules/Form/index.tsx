@@ -1,5 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup'
-import { FormProvider, useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
 
 import { Flex } from '@/components/atoms/Flex'
@@ -15,7 +15,11 @@ const schema = yup.object({
 type FormValues = yup.InferType<typeof schema>
 
 export const Form = () => {
-  const form = useForm<FormValues>({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormValues>({
     resolver: yupResolver(schema),
     mode: 'onSubmit',
   })
@@ -25,12 +29,10 @@ export const Form = () => {
   }
 
   return (
-    <S.Form onSubmit={form.handleSubmit(onSubmit)}>
+    <S.Form onSubmit={handleSubmit(onSubmit)}>
       <Flex marginTop={10}>
-        <FormProvider {...form}>
-          <Input placeholder="Jhon Doe" name="username" />
-          <Input placeholder="jhon.doe@email.com" name="email" />
-        </FormProvider>
+        <Input placeholder="Jhon Doe" {...register('username')} error={errors.username?.message?.toString()} />
+        <Input placeholder="jhon.doe@email.com" {...register('email')} error={errors.email?.message?.toString()} />
       </Flex>
 
       <Flex>

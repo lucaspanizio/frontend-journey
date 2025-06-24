@@ -18,6 +18,12 @@ const CompoundPattern = lazy(() =>
   })),
 )
 
+const InputControl = lazy(() =>
+  import('@/pages/input-control').then((module) => ({
+    default: module.InputControl,
+  })),
+)
+
 const NotFound = lazy(() =>
   import('@/pages/NotFound').then((module) => ({
     default: module.NotFound,
@@ -33,6 +39,7 @@ export const AppRoutes = () => {
         { index: true, element: <CompoundPattern /> },
         { path: ROUTES.COMPOUND_PATTERN, element: <CompoundPattern /> },
         { path: ROUTES.STATE_MANAGERS, element: <StateManagers /> },
+        { path: ROUTES.INPUT_CONTROL, element: <InputControl /> },
         {
           path: ROUTES.ERROR_BOUNDARY,
           element: (

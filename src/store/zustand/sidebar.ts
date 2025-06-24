@@ -15,6 +15,7 @@ export const MENUS = [
   { id: 1, path: ROUTES.COMPOUND_PATTERN, title: 'Compound Pattern' },
   { id: 2, path: ROUTES.STATE_MANAGERS, title: 'Gerenciadores de Estado' },
   { id: 3, path: ROUTES.ERROR_BOUNDARY, title: 'Error Boundary' },
+  { id: 4, path: ROUTES.INPUT_CONTROL, title: 'Controle de Inputs' },
 ]
 
 const initialState = {
